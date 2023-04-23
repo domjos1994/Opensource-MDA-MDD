@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Interaction name="S2"/>
+  <uml:Interaction name="Null"/>
+  <uml:Interaction name="Is Not Null"/>
+  <uml:Interaction name="FinalState10"/>
+  <uml:Interaction name="Return"/>
+  <uml:Interaction name="NoProject"/>
+  <uml:Interaction name="NoVersion"/>
+  <uml:Interaction name="NoDeveloper"/>
+  <uml:Interaction name="Return"/>
+  <uml:Interaction name="NoState"/>
+  <uml:Interaction name="Update-State"/>
+  <uml:Interaction name="Insert-State"/>
+  <uml:Interaction name="NotSaved"/>
+  <uml:Interaction name="Init"/>
+  <uml:Interaction name="Return"/>
+  <uml:Interaction name="Persisted"/>
+  <uml:Message/>
+  <uml:Message name="Is Null"/>
+  <uml:Message/>
+  <uml:Message/>
+  <uml:Message name="ID not 0"/>
+  <uml:Message name="return false"/>
+  <uml:Message/>
+  <uml:Message/>
+  <uml:Message name="Set Project"/>
+  <uml:Message name="Set Version"/>
+  <uml:Message name="Set Developer"/>
+  <uml:Message name="Issue Exists"/>
+  <uml:Message/>
+  <uml:Message/>
+  <uml:Message name="Update State"/>
+  <uml:Message name="New State"/>
+  <uml:Message name="Save Issue"/>
+  <uml:Message name="Init Hibernate"/>
+  <uml:Message name="Persist Data"/>
+  <uml:Message name="Commit"/>
+</xmi:XMI>

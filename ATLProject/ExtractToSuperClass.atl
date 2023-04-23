@@ -1,16 +1,23 @@
-module ExtractToSuperClass;
-create OUT: UML refining IN: UML;
+-- @nsURI UML=http://www.eclipse.org/uml2/5.0.0/UML
+-- @nsURI UML2=http://www.eclipse.org/uml2/5.0.0/UML
 
-helper context UML!Property def: hasSameProperty(cls: UML!Class): Boolean = 
-for(prop in cls.ownedProperty) {
-	if self.name = prop.name then
-		true
-	endif
+module Families2Persons;
+create OUT:UML2 from IN:UML;
+
+rule State2Interaction {
+	from
+		s:UML!State
+	to
+		t:UML2!Interaction (
+			name <- s.name
+		)
 }
-false;
 
-rule ExtractParametersToSuperClass {
-	from oldC1: UML!Property, oldC2: UML!Property
-	to 
-		newC12: UML!Class(name <- oldC1.getSameProperty(oldC2))
+rule Transition2Message {
+	from
+		s:UML!Transition
+	to
+		t:UML2!Message (
+			name <- s.name
+		)
 }

@@ -1,9 +1,0 @@
-module ExtractToSuperClass;
-create OUT: UML refining IN: UML;
-
-rule ExtractParametersToSuperClass {
-	from oldC1: UML!Class, oldC2: UML!Class
-	to 
-		newC1: UML!Class(name <- oldC1.name),
-		newC2: UML!Class(name <- oldC2.name)
-}
