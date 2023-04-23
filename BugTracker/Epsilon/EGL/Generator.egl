@@ -1,0 +1,19 @@
+[% import "StateMachine.egl"; %]
+[% import "ClassDiagram.egl"; %]
+[%
+	// Public Part
+	// Here is the part of the content which will be printed in the file
+%]
+package [%=p.replace("/", ".").replace("BugTracker.src.main.java.", "")%];
+
+[%=cl.addImports()%]
+
+[%=cl.addEntityAnnotation()%]
+[%=cl.printHeader()%]
+[%=cl.addProperties()%]
+
+[%=cl.addGetterAndSetter()%]
+
+[%=cl.addEnumerations()%]
+
+}

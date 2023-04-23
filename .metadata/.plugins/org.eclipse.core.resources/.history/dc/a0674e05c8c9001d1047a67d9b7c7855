@@ -1,0 +1,11 @@
+package [%=p.select(p|p.packagedElement.select(c|c.name==cl.name).size==1 and p.type.name=="Package").name.last%];
+
+public class [%=cl.name%] {
+[%for(elem in cl.ownedAttribute) {%]
+	[%=elem.visibility%] [%if(elem.isStatic){%]static[%}%] [%=elem.type.name%] [%=elem.name%];
+[%}%]
+
+[%for(op in cl.ownedOperation) {%]
+	[%=op.visibility%] [%if(op.isStatic){%]static[%}%] [%=op.type.println()%]
+[%}%]
+}

@@ -1,0 +1,52 @@
+[%="<?xml version = \"1.0\" encoding=\"utf-8\"?>"%]
+[%="<!DOCTYPE hibernate-configuration PUBLIC \"-//Hibernate/Hibernate Configuration DTD 3.0//EN\" \"classpath://org/hibernate/hibernate-configuration-3.0.dtd\">"
+%]
+[%="<hibernate-configuration>"%]
+[%="\t<session-factory>"%]
+[%=addProperty("hibernate.dialect", dialect)%]
+[%=addProperty("hibernate.connection.driver_class", driv)%]
+[%=addProperty("hibernate.connection.url", url)%]
+[%=addProperty("hibernate.connection.username", user)%]
+[%=addProperty("hibernate.connection.password", password)%]
+[%=addProperty("hibernate.hbm2ddl.auto", auto)%]
+[%=addProperty("hibernate.current_session_context_class", context)%]
+
+[%
+	for(cl in m.getClasses(new List<Class>(), null)) {
+		var pkg = cl.qualifiedName.replace("::", ".");
+		%][%="\t\t<mapping class='"%][%=pkg%][%="'/>\n"%][%
+	}
+%]
+
+[%="\t</session-factory>"%]
+[%="</hibernate-configuration>"%]
+
+[%
+@template
+operation addProperty(key: String, value: String) {
+	%][%="\t\t<property name=\""%][%=key%][%="\">"%][%=value%][%="</property>\n"%][%
+}
+
+
+operation Model getClasses(lst: List<Class>, pe: Package): List<Class> {
+	if(pe == null) {
+		for(cl in self.packagedElement.select(p|p.isTypeOf(Class))) {
+			lst.add(cl);
+		}
+		for(p in self.packagedElement.select(p|p.isTypeOf(Package))) {
+			lst = m.getClasses(lst, p);
+		}
+	} else {
+		for(cl in pe.packagedElement.select(p|p.isTypeOf(Class))) {
+			lst.add(cl);
+		}
+		for(p in pe.packagedElement.select(p|p.isTypeOf(Package))) {
+			lst = m.getClasses(lst, p);
+		}
+	}
+	
+	
+	
+	return lst;
+}
+%]

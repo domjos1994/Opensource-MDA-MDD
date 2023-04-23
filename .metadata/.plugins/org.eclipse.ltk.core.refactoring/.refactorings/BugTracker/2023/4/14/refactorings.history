@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BugTracker/Epsilon/EGL/StateMachine.eol&apos; to &apos;StateMachine.egl&apos;" description="Rename resource &apos;StateMachine.eol&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Epsilon/EGL/StateMachine.eol" name="StateMachine.egl" stamp="1680622753104" updateReferences="true"/>
+</session>

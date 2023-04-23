@@ -1,0 +1,2 @@
+module ExtractToSuperClass;
+create OUT: UML refining IN: UML;

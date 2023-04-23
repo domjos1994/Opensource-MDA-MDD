@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_CWTF1-EXEe2A6ZKPhF6jfw" name="BugTracker"/>
+  <uml:Model xmi:id="_CWTF2OEXEe2A6ZKPhF6jfw"/>
+  <uml:Model xmi:id="_CWTF2eEXEe2A6ZKPhF6jfw"/>
+  <uml:Model xmi:id="_CWTF2uEXEe2A6ZKPhF6jfw"/>
+  <uml:Model xmi:id="_CWTF2-EXEe2A6ZKPhF6jfw"/>
+  <uml:Model xmi:id="_CWTF3OEXEe2A6ZKPhF6jfw"/>
+  <uml:Package xmi:id="_CWTF3eEXEe2A6ZKPhF6jfw" name="Base">
+    <packagedElement xmi:type="uml:Class" xmi:id="_CWc20OEXEe2A6ZKPhF6jfw" name="Category" visibility="public">
+      <generalization xmi:id="_CWc20eEXEe2A6ZKPhF6jfw">
+        <general xmi:type="uml:Class" href="../../../BugTracker.uml#_wWnZ8Mf4Ee2rKOZ8A5U7rQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CWc20uEXEe2A6ZKPhF6jfw" name="TitledObject" visibility="public">
+      <generalization xmi:id="_CWc20-EXEe2A6ZKPhF6jfw">
+        <general xmi:type="uml:Class" href="../../../BugTracker.uml#_BnD48Mf3Ee2rKOZ8A5U7rQ"/>
+      </generalization>
+      <ownedAttribute xmi:id="_CWc21OEXEe2A6ZKPhF6jfw" name="title" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_CWc21eEXEe2A6ZKPhF6jfw" name="description" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_CWc21uEXEe2A6ZKPhF6jfw" name="setTitle" visibility="public">
+        <ownedParameter xmi:id="_CWc21-EXEe2A6ZKPhF6jfw" name="title">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_CWc22OEXEe2A6ZKPhF6jfw" name="getTitle" visibility="public">
+        <ownedParameter xmi:id="_CWc22eEXEe2A6ZKPhF6jfw" name="title" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_CWc22uEXEe2A6ZKPhF6jfw" name="setDescription" visibility="public">
+        <ownedParameter xmi:id="_CWc22-EXEe2A6ZKPhF6jfw" name="description">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_CWc23OEXEe2A6ZKPhF6jfw" name="getDescription" visibility="public">
+        <ownedParameter xmi:id="_CWc23eEXEe2A6ZKPhF6jfw" name="description" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CWc23uEXEe2A6ZKPhF6jfw" name="BaseObject" visibility="public">
+      <ownedAttribute xmi:id="_CWc23-EXEe2A6ZKPhF6jfw" name="ID" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_CWc24OEXEe2A6ZKPhF6jfw" name="setID" visibility="public">
+        <ownedParameter xmi:id="_CWc24eEXEe2A6ZKPhF6jfw" name="ID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_CWc24uEXEe2A6ZKPhF6jfw" name="getID" visibility="public">
+        <ownedParameter xmi:id="_CWc24-EXEe2A6ZKPhF6jfw" name="ID" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CWc25OEXEe2A6ZKPhF6jfw" name="Tag" visibility="public">
+      <generalization xmi:id="_CWc25eEXEe2A6ZKPhF6jfw">
+        <general xmi:type="uml:Class" href="../../../BugTracker.uml#_wWnZ8Mf4Ee2rKOZ8A5U7rQ"/>
+      </generalization>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CWc25uEXEe2A6ZKPhF6jfw" name="User" visibility="public">
+      <generalization xmi:id="_CWc25-EXEe2A6ZKPhF6jfw">
+        <general xmi:type="uml:Class" href="../../../BugTracker.uml#_BnD48Mf3Ee2rKOZ8A5U7rQ"/>
+      </generalization>
+      <ownedAttribute xmi:id="_CWc26OEXEe2A6ZKPhF6jfw" name="name" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_CWc26eEXEe2A6ZKPhF6jfw" name="password" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_CWc26uEXEe2A6ZKPhF6jfw" name="userName" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_CWc26-EXEe2A6ZKPhF6jfw" name="setName" visibility="public">
+        <ownedParameter xmi:id="_CWc27OEXEe2A6ZKPhF6jfw" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_CWc27eEXEe2A6ZKPhF6jfw" name="getName" visibility="public">
+        <ownedParameter xmi:id="_CWc27uEXEe2A6ZKPhF6jfw" name="name" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_CWc27-EXEe2A6ZKPhF6jfw" name="setUserName" visibility="public">
+        <ownedParameter xmi:id="_CWc28OEXEe2A6ZKPhF6jfw" name="userName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_CWc28eEXEe2A6ZKPhF6jfw" name="getUserName" visibility="public">
+        <ownedParameter xmi:id="_CWc28uEXEe2A6ZKPhF6jfw" name="userName" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_CWc28-EXEe2A6ZKPhF6jfw" name="setPassword" visibility="public">
+        <ownedParameter xmi:id="_CWc29OEXEe2A6ZKPhF6jfw" name="password">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_CWc29eEXEe2A6ZKPhF6jfw" name="getPassword" visibility="public">
+        <ownedParameter xmi:id="_CWc29uEXEe2A6ZKPhF6jfw" name="password" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+  </uml:Package>
+  <uml:Association xmi:id="_CWc29-EXEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+</xmi:XMI>

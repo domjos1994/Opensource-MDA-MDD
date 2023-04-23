@@ -1,0 +1,174 @@
+package [%=p.select(p|p.packagedElement.select(c|c.name==cl.name).size==1 and p.type.name=="Package").name.last%];
+
+[%=cl.addListImport()%]
+[%=cl.getImport()%]
+
+public class [%=cl.name%] [%=cl.getExtends()%] {
+[%for(elem in cl.ownedAttribute.select(attr|attr.type!=null and attr.type.type.name!="Class")) {%]
+	[%=elem.visibility%] [%if(elem.isStatic){%]static[%}%] [%=elem.type.name%] [%=elem.name%];
+[%}%]
+	[%=cl.getAssociations()%]
+
+[%for(op in cl.ownedOperation) {%]
+	[%=op.visibility%] [%=op.getReturnType()%] [%if(op.isStatic){%]static[%}%] [%=op.name%]([%=op.printParameter()%]) {
+		[%=op.getContent(p)%]
+	}
+	
+[%}%]
+	[%=cl.addGetterAndSetterOfAssociations()%]
+	
+	[%for(classifier in cl.nestedClassifier) {
+		%][%=classifier.createEnumeration()%][%
+	}%]
+}
+[%
+@template
+operation Operation getReturnType() {
+	var items = self.ownedParameter.select(p|p.direction.name=="return");
+	if(items.size==1) {
+		%][%=items[0].type.name%][%
+	} else {
+		%]void[%
+	}
+}
+
+@template
+operation Operation getContent(p) {
+	if(self.name.startsWith("set")) {
+		var items = self.ownedParameter.select(p|p.direction.name=="in");
+		%]this.[%=items.name[0]%]=[%=items.name[0]%];[%
+	} else if(self.name.startsWith("get")) {
+		%]return this.[%=self.name.replace("get", "")%];[%
+	} else {
+		self.createStateMachine(p);
+	}
+}
+
+@template
+operation Operation createStateMachine(p) {
+	self.println();
+	for(elem in self.method.select(sm|sm.type.name=="StateMachine")) {
+		for(region in elem.region) {
+			region.println();
+		
+			// find start
+			var start = null;
+			for(state in region.State) {
+				state.println();
+			}
+		}
+	}
+}
+
+@template
+operation Operation printParameter() {
+	var items = self.ownedParameter.select(p|p.direction.name=="in");
+	if(items.size!=0) {
+		for(i in Sequence{0..items.size-1}) {
+			if(items[i].type != null) {
+				if(i!=0) {%], [%}%][%=items[i].type.name%] [%=items[i].name%][%
+			}
+		}
+	}
+}
+
+@template
+operation Class getImport() {
+	for(gen in self.generalization) {
+		if(gen.general!=null) {
+			%]import [%=gen.general.name%];[%
+		}
+	}
+}
+
+@template
+operation Class getExtends() {
+	for(gen in self.generalization) {
+		if(gen.general!=null) {
+			%]extends [%=gen.general.name%][%
+		}
+	}
+}
+
+@template
+operation Class getAssociations() {
+	for(asso in self.attribute.select(attr|attr.type!=null and attr.type.type.name=="Class")) {
+		if(asso.upperBound==1) {
+			%][%=asso.visibility%] [%if(asso.isStatic){%]static[%}%] [%=asso.type.name%] [%=asso.name%];
+			[%
+		} else  {
+			%][%=asso.visibility%] [%if(asso.isStatic){%]static[%}%] List<[%=asso.type.name%]> [%=asso.name%];
+			[%
+		}
+	}
+}
+
+@template
+operation Class addListImport() {
+	var multiple = -1;
+	for(asso in self.attribute.select(attr|attr.type!=null and attr.type.type.name=="Class")) {
+		if(asso.upperBound!=1) {
+			multiple = 1;
+		}
+		%]import [%=asso.type.name%];
+		[%
+	}
+	if(multiple==1) {
+		%]import java.util.List;
+		[%
+	}
+}
+
+@template
+operation Class addGetterAndSetterOfAssociations() {
+	var multiple = -1;
+	for(asso in self.attribute.select(attr|attr.type!=null and attr.type.type.name=="Class")) {
+		var contains = false;
+		for(op in self.ownedOperation.select(op|op.name=="set" + asso.type.name or op.name=="get" + asso.type.name)) {
+			contains = true;
+			break;
+		}
+		if(contains) {
+			continue;
+		}
+		if(asso.upperBound==1) {
+%]public void set[%=asso.type.name%]([%=asso.type.name%] [%=asso.name%]) {
+	this.[%=asso.name%]=[%=asso.name%];
+}
+
+public [%=asso.type.name%] get[%=asso.type.name%]() {
+	return this.[%=asso.name%];
+}
+
+[%
+		} else {
+%]public void set[%=asso.type.name%](List<[%=asso.type.name%]> [%=asso.name%]) {
+	this.[%=asso.name%]=[%=asso.name%];
+}
+
+public List<[%=asso.type.name%]> get[%=asso.type.name%]() {
+	return this.[%=asso.name%];
+}
+
+[%
+		}
+	}
+}
+
+@template
+operation Enumeration createEnumeration() {
+	var content = self.visibility + " enum " + self.name + " {";
+	
+	var items = "";
+	for(item in self.ownedLiteral) {
+		if(items=="") {
+			items = "\t" + item.name;
+		} else {
+			items = items + ",\n\t" + item.name;
+		}
+	}
+	content = content + "\n" + items + "\n}";
+	content.println();
+	%][%=content%][%
+}
+%]

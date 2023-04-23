@@ -1,0 +1,34 @@
+rule Class2Code transform cl: Class {
+	parameters: Map {
+		"p" = cl.getPackage("BugTracker/src/main/java/")
+	}
+
+	template: "Generator.egl"
+	target: "../Output/" + cl.getPackage("BugTracker/src/main/java/") + "/" + cl.name + ".java"
+}
+
+rule Class2Mapping transform m: Model {
+	guard: m.name=="BugTracker"
+	parameters: Map {
+		"dialect" = "org.hibernate.dialect.MariaDB103Dialect",
+		"driv" = "com.mysql.cj.jdbc.Driver",
+		"url" = "jdbc:mysql://localhost/test2",
+		"user" = "root",
+		"password" = "",
+		"auto" = "update",
+		"context" = "thread"
+	}
+	
+	template: "Mapping.egl"
+	target: "../Output/BugTracker/src/main/resources/hibernate.cfg.xml"
+}
+	
+operation Class getPackage(path: String): String {
+	if(self.eContainer().isTypeOf(Package)) {
+		return path + self.eContainer().qualifiedName.replace("::", "/");
+	} else if(not self.eContainer.isTypeOf(ClassifierTemplateParameter)) {
+		return path + self.eContainer().qualifiedName.replace("::", "/");
+	} else {
+		return "";
+	}
+}

@@ -1,0 +1,59 @@
+rule EntryExtractor
+    transform m : Source!Model 
+    to mNew : Target!Model {
+    
+	mNew.name = m.name;
+	
+	for(p in m.packagedElement) {
+		var pNew = new Target!Package();		
+		pNew.name = p.name;
+	
+		for(cl in p.packagedElement.select(pe|pe.isTypeOf(Source!Class))) {
+			if(cl.appliedStereotypes.select(s|s.name=="Entry" or s.name=="SuperClass").size!=0) {
+				var clNew = new Target!Class();
+				// add name
+				clNew.name = cl.name;
+				clNew.visibility = cl.visibility;
+				
+				// add generalization
+				for(gen in cl.generalization) {
+					var generalization = new Target!Generalization();
+					generalization.general = gen.general;
+					clNew.generalization.add(generalization);
+				}
+				
+				// add attributes
+				for(attr in cl.ownedAttribute) {
+					var property = new Target!Property();
+					property.name = attr.name;
+					property.visibility = attr.visibility;
+					property.type = attr.type;
+					clNew.ownedAttribute.add(property);
+				}
+				
+				// add methods
+				for(op in cl.ownedOperation) {
+					var method = new Target!Operation();
+					method.name = op.name;
+					method.visibility = op.visibility;
+					
+					for(param in op.ownedParameter) {
+						var parameter = new Target!Parameter();
+						parameter.name = param.name;
+						parameter.direction = param.direction;
+						parameter.type = param.type;
+						method.ownedParameter.add(parameter);
+					}
+					
+					clNew.ownedOperation.add(method);
+				}
+				pNew.packagedElement.add(clNew);
+			}
+		}
+		for(ass in p.packagedElement.select(pe|pe.isTypeOf(Source!Association))) {
+			ass.println();
+		}
+		
+		mNew.packagedElement.add(pNew);
+	}
+}

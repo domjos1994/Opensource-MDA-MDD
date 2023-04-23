@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 12 resources" deleteContents="false" description="Delete 12 resources" element1="/BugTracker/Epsilon/Output/BaseObject.java" element10="/BugTracker/Epsilon/Output/User.java" element11="/BugTracker/Epsilon/Output/V.java" element12="/BugTracker/Epsilon/Output/Version.java" element2="/BugTracker/Epsilon/Output/Category.java" element3="/BugTracker/Epsilon/Output/E.java" element4="/BugTracker/Epsilon/Output/Issue.java" element5="/BugTracker/Epsilon/Output/K.java" element6="/BugTracker/Epsilon/Output/Project.java" element7="/BugTracker/Epsilon/Output/T.java" element8="/BugTracker/Epsilon/Output/Tag.java" element9="/BugTracker/Epsilon/Output/TitledObject.java" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="12" stamp="1679594756569"/>
+</session>

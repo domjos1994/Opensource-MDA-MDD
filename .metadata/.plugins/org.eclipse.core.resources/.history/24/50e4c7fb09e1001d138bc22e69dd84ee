@@ -1,0 +1,160 @@
+wizard SplitName {
+	guard: self.isTypeOf(Class) and self.ownedAttribute.name.contains("name")
+	title: "Split Name"
+	do {
+	
+		for(attribute in self.ownedAttribute.select(attr|attr.name="name")) {
+			attribute.name = "firstName";
+			var newElem = new Property;
+			newElem.name = "lastName";
+			newElem.type = attribute.type;
+			newElem.visibility = attribute.visibility;
+			self.ownedAttribute.add(newElem);
+		}
+	}
+}
+
+wizard SplitLocation {
+	guard: self.isTypeOf(Class) and self.ownedAttribute.name.contains("location")
+	title: "Split Location"
+	do {
+	
+		for(attribute in self.ownedAttribute.select(attr|attr.name="location")) {
+			var newElem = new Property;
+			newElem.name = "postalCode";
+			newElem.type = attribute.type;
+			newElem.visibility = attribute.visibility;
+			self.ownedAttribute.add(newElem);
+		}
+	}
+}
+
+wizard AddGetterAndSetter {
+	guard: 
+		self.isTypeOf(Property)
+		// only show if selected Element type of Property
+		
+	title: 
+		"Create Getter and Setter of " + self.name
+		// name to show in context menu
+	
+	do {
+	
+		// get parent element (class)
+		var cls = self.eContainer();
+		
+		// get list of operations
+		var operations = cls.ownedOperation;
+		
+		// first letter of function after set is uppercase
+		var capital = self.name.substring(0, 1).toUpperCase();
+		var rest = self.name.substring(1);
+		
+		// check if setter or getter exists
+		var hasSetter = false;
+		var hasGetter = false;
+		for(op in operations) {
+			if(op.name == "set" + capital + rest) {
+				hasSetter = true;
+			} 
+			if(op.name == "get" + capital + rest) {
+				hasGetter = true;
+			}
+		}
+		
+		// create setter
+		if(not hasSetter) {
+			var setter = new Operation();
+			setter.name = "set" + capital + rest;
+			
+			var parameter = new Parameter();
+			parameter.name = self.name;
+			parameter.type = self.type; 
+			
+			// type of parameter is input
+			parameter.direction = parameter.direction.getByName("in");
+			setter.ownedParameter.add(parameter);
+			
+			operations.add(setter);
+		}
+		
+		// create getter
+		if(not hasGetter) {
+			var getter = new Operation();
+			getter.name = "get" + capital + rest;
+			
+			var parameter = new Parameter();
+			parameter.name = self.name;
+			parameter.type = self.type; 
+			
+			// type of parameter is return
+			parameter.direction = parameter.direction.getByName("return");
+			getter.ownedParameter.add(parameter);
+			
+			operations.add(getter);
+		}
+	}
+}
+
+wizard RenameProperty {
+	guard: 
+		self.isTypeOf(Property)
+		// only show if selected Element type of Property
+	title:
+		"Rename Property " + self.name + " including Getter and Setter"
+		
+	do {
+		var item = System.user.prompt("Geben Sie den Namen an, in den Sie das Feld umbenennen möchten:");
+		if(item!="") {
+			var confirm = System.user.confirm("Sind Sie sicher?");
+			if(confirm) {
+				// first letter of function after set is uppercase
+				var capital = item.substring(0, 1).toUpperCase();
+				var rest = item.substring(1);
+				
+				// first letter of function after set is uppercase
+				var oldCapital = self.name.substring(0, 1).toUpperCase();
+				var oldRest = self.name.substring(1);
+				
+				// get parent element (class)
+				var cls = self.eContainer();
+				
+				// get list of operations
+				var operations = cls.ownedOperation;
+				
+				for(op in operations) {
+					if(op.name == "set" + oldCapital + oldRest) {
+						op.name = "set" + capital + rest;
+						for(param in op.ownedParameter.select(p|p.name==self.name)) {
+							param.name = item;
+						}
+					}
+					if(op.name == "get" + oldCapital + oldRest) {
+						op.name = "get" + capital + rest;
+					}
+				}
+				
+				// rename property
+				self.name = item;
+			}
+		}
+	}
+}
+
+wizard CreateConstructor {
+	guard: self.isTypeOf(Class)
+	title: "Create Constructor of " + self.name
+	
+	do {
+		for(ownedAttribute in self.ownedAttribute) {
+			var name = ownedAttribute.name;
+			var hasGetterAndSetter = self.ownedOperation.select(op|
+				op.name = "set" + name.substring(0,1).toUpperCase() + name.substring(1) or 
+				op.name = "get" + name.substring(0,1).toUpperCase() + name.substring(1)).size == 2;
+				
+			if(hasGetterAndSetter) {
+			
+			}
+		}
+	}
+}

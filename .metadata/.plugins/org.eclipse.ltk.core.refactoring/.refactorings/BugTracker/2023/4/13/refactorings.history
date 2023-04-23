@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BugTracker/Epsilon/Output/BugTracker/pom.mvn&apos; to &apos;pom.xml&apos;" description="Rename resource &apos;pom.mvn&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Epsilon/Output/BugTracker/pom.mvn" name="pom.xml" stamp="1680353006696" updateReferences="true"/>
+</session>

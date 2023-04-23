@@ -1,0 +1,26 @@
+rule EntryExtractor
+    transform m : Source!Model 
+    to mNew : Target!Model {
+    
+    // set name to new model
+    mNew.name = m.name;
+    
+    // iterate through packages for classes
+    for(p in m.packagedElement.select(mo|mo.isTypeOf(Source!Package))) {
+		// ...
+	
+		// iterate through classes
+		for(cl in p.packagedElement.select(pe|pe.isTypeOf(Source!Class))) {
+		
+			// check stereotype
+			if(cl.appliedStereotypes.select(s|s.name=="Entry" or s.name=="SuperClass").size!=0) {
+			
+			}
+		}
+	}
+	
+	// iterate through packages for associations
+	for(ass in m.packagedElement.select(mo|mo.isTypeOf(Source!Association))) {
+	
+	}
+}

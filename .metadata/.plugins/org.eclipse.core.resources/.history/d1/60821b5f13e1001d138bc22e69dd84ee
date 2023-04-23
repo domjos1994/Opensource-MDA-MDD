@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_Vyk1JeETEe2A6ZKPhF6jfw" name="BugTracker">
+    <packagedElement xmi:type="uml:Package" xmi:id="_VyyQgOETEe2A6ZKPhF6jfw" name="Base">
+      <packagedElement xmi:type="uml:Class" xmi:id="_VyyQgeETEe2A6ZKPhF6jfw" name="TitledObject" visibility="public">
+        <generalization xmi:id="_VyyQguETEe2A6ZKPhF6jfw">
+          <general xmi:type="uml:Class" href="../../../BugTracker.uml#_BnD48Mf3Ee2rKOZ8A5U7rQ"/>
+        </generalization>
+        <ownedAttribute xmi:id="_VyyQg-ETEe2A6ZKPhF6jfw" name="title" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Vy8BgOETEe2A6ZKPhF6jfw" name="description" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_Vy8BgeETEe2A6ZKPhF6jfw" name="setTitle" visibility="public">
+          <ownedParameter xmi:id="_Vy8BguETEe2A6ZKPhF6jfw" name="title">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8Bg-ETEe2A6ZKPhF6jfw" name="getTitle" visibility="public">
+          <ownedParameter xmi:id="_Vy8BhOETEe2A6ZKPhF6jfw" name="title" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8BheETEe2A6ZKPhF6jfw" name="setDescription" visibility="public">
+          <ownedParameter xmi:id="_Vy8BhuETEe2A6ZKPhF6jfw" name="description">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8Bh-ETEe2A6ZKPhF6jfw" name="getDescription" visibility="public">
+          <ownedParameter xmi:id="_Vy8BiOETEe2A6ZKPhF6jfw" name="description" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Vy8BieETEe2A6ZKPhF6jfw" name="Category" visibility="public">
+        <generalization xmi:id="_Vy8BiuETEe2A6ZKPhF6jfw">
+          <general xmi:type="uml:Class" href="../../../BugTracker.uml#_wWnZ8Mf4Ee2rKOZ8A5U7rQ"/>
+        </generalization>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Vy8Bi-ETEe2A6ZKPhF6jfw" name="Tag" visibility="public">
+        <generalization xmi:id="_Vy8BjOETEe2A6ZKPhF6jfw">
+          <general xmi:type="uml:Class" href="../../../BugTracker.uml#_wWnZ8Mf4Ee2rKOZ8A5U7rQ"/>
+        </generalization>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Vy8BjeETEe2A6ZKPhF6jfw" name="User" visibility="public">
+        <generalization xmi:id="_Vy8BjuETEe2A6ZKPhF6jfw">
+          <general xmi:type="uml:Class" href="../../../BugTracker.uml#_BnD48Mf3Ee2rKOZ8A5U7rQ"/>
+        </generalization>
+        <ownedAttribute xmi:id="_Vy8Bj-ETEe2A6ZKPhF6jfw" name="name" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Vy8BkOETEe2A6ZKPhF6jfw" name="password" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Vy8BkeETEe2A6ZKPhF6jfw" name="userName" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_Vy8BkuETEe2A6ZKPhF6jfw" name="setName" visibility="public">
+          <ownedParameter xmi:id="_Vy8Bk-ETEe2A6ZKPhF6jfw" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8BlOETEe2A6ZKPhF6jfw" name="getName" visibility="public">
+          <ownedParameter xmi:id="_Vy8BleETEe2A6ZKPhF6jfw" name="name" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8BluETEe2A6ZKPhF6jfw" name="setUserName" visibility="public">
+          <ownedParameter xmi:id="_Vy8Bl-ETEe2A6ZKPhF6jfw" name="userName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8BmOETEe2A6ZKPhF6jfw" name="getUserName" visibility="public">
+          <ownedParameter xmi:id="_Vy8BmeETEe2A6ZKPhF6jfw" name="userName" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8BmuETEe2A6ZKPhF6jfw" name="setPassword" visibility="public">
+          <ownedParameter xmi:id="_Vy8Bm-ETEe2A6ZKPhF6jfw" name="password">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8BnOETEe2A6ZKPhF6jfw" name="getPassword" visibility="public">
+          <ownedParameter xmi:id="_Vy8BneETEe2A6ZKPhF6jfw" name="password" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Vy8BnuETEe2A6ZKPhF6jfw" name="BaseObject" visibility="public">
+        <ownedAttribute xmi:id="_Vy8Bn-ETEe2A6ZKPhF6jfw" name="ID" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_Vy8BoOETEe2A6ZKPhF6jfw" name="setID" visibility="public">
+          <ownedParameter xmi:id="_Vy8BoeETEe2A6ZKPhF6jfw" name="ID">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8BouETEe2A6ZKPhF6jfw" name="getID" visibility="public">
+          <ownedParameter xmi:id="_Vy8Bo-ETEe2A6ZKPhF6jfw" name="ID" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Vy8BqeETEe2A6ZKPhF6jfw" name="Issue">
+      <packagedElement xmi:type="uml:Class" xmi:id="_Vy8BquETEe2A6ZKPhF6jfw" name="Issue" visibility="public">
+        <generalization xmi:id="_Vy8Bq-ETEe2A6ZKPhF6jfw">
+          <general xmi:type="uml:Class" href="../../../BugTracker.uml#_wWnZ8Mf4Ee2rKOZ8A5U7rQ"/>
+        </generalization>
+        <ownedAttribute xmi:id="_Vy8BrOETEe2A6ZKPhF6jfw" name="summary" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Vy8BreETEe2A6ZKPhF6jfw" name="stepsToReproduce" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Vy8BruETEe2A6ZKPhF6jfw" name="OS" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Vy8Br-ETEe2A6ZKPhF6jfw" name="tag" visibility="public">
+          <type xmi:type="uml:Class" href="../../../BugTracker.uml#_DbyFQMf_Ee2rKOZ8A5U7rQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Vy8BsOETEe2A6ZKPhF6jfw" name="category" visibility="public">
+          <type xmi:type="uml:Class" href="../../../BugTracker.uml#__rGB4Mf-Ee2rKOZ8A5U7rQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Vy8BseETEe2A6ZKPhF6jfw" name="user" visibility="public">
+          <type xmi:type="uml:Class" href="../../../BugTracker.uml#_xxpMAMlBEe2LjtXVys48lg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Vy8BsuETEe2A6ZKPhF6jfw" name="version" visibility="public">
+          <type xmi:type="uml:Class" href="../../../BugTracker.uml#_tbxfUMk-Ee2LjtXVys48lg"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_Vy8Bs-ETEe2A6ZKPhF6jfw" name="setSummary" visibility="public">
+          <ownedParameter xmi:id="_Vy8BtOETEe2A6ZKPhF6jfw" name="summary">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8BteETEe2A6ZKPhF6jfw" name="getSummary" visibility="public">
+          <ownedParameter xmi:id="_Vy8BtuETEe2A6ZKPhF6jfw" name="summary" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8Bt-ETEe2A6ZKPhF6jfw" name="setStepsToReproduce" visibility="public">
+          <ownedParameter xmi:id="_Vy8BuOETEe2A6ZKPhF6jfw" name="stepsToReproduce">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8BueETEe2A6ZKPhF6jfw" name="getStepsToReproduce" visibility="public">
+          <ownedParameter xmi:id="_Vy8BuuETEe2A6ZKPhF6jfw" name="stepsToReproduce" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8Bu-ETEe2A6ZKPhF6jfw" name="setOS" visibility="public">
+          <ownedParameter xmi:id="_Vy8BvOETEe2A6ZKPhF6jfw" name="OS">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Vy8BveETEe2A6ZKPhF6jfw" name="getOS" visibility="public">
+          <ownedParameter xmi:id="_Vy8BvuETEe2A6ZKPhF6jfw" name="OS" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_VzFyhuETEe2A6ZKPhF6jfw" name="Model"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_VzFym-ETEe2A6ZKPhF6jfw" name="Project">
+      <packagedElement xmi:type="uml:Class" xmi:id="_VzFynOETEe2A6ZKPhF6jfw" name="Version" visibility="public">
+        <generalization xmi:id="_VzFyneETEe2A6ZKPhF6jfw">
+          <general xmi:type="uml:Class" href="../../../BugTracker.uml#_wWnZ8Mf4Ee2rKOZ8A5U7rQ"/>
+        </generalization>
+        <ownedAttribute xmi:id="_VzFynuETEe2A6ZKPhF6jfw" name="state" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_VzFyn-ETEe2A6ZKPhF6jfw" name="released" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_VzFyoOETEe2A6ZKPhF6jfw" name="project" visibility="public">
+          <type xmi:type="uml:Class" href="../../../BugTracker.uml#_O1wDIMk8Ee2LjtXVys48lg"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_VzFyoeETEe2A6ZKPhF6jfw" name="setState" visibility="public">
+          <ownedParameter xmi:id="_VzFyouETEe2A6ZKPhF6jfw" name="state">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_VzFyo-ETEe2A6ZKPhF6jfw" name="getState" visibility="public">
+          <ownedParameter xmi:id="_VzFypOETEe2A6ZKPhF6jfw" name="state" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_VzFypeETEe2A6ZKPhF6jfw" name="setReleased" visibility="public">
+          <ownedParameter xmi:id="_VzFypuETEe2A6ZKPhF6jfw" name="released">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_VzFyp-ETEe2A6ZKPhF6jfw" name="getReleased" visibility="public">
+          <ownedParameter xmi:id="_VzFyqOETEe2A6ZKPhF6jfw" name="released" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_VzFyqeETEe2A6ZKPhF6jfw" name="Project" visibility="public">
+        <generalization xmi:id="_VzFyquETEe2A6ZKPhF6jfw">
+          <general xmi:type="uml:Class" href="../../../BugTracker.uml#_wWnZ8Mf4Ee2rKOZ8A5U7rQ"/>
+        </generalization>
+        <ownedAttribute xmi:id="_VzFyq-ETEe2A6ZKPhF6jfw" name="state" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_VzFyrOETEe2A6ZKPhF6jfw" name="released" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_VzFyreETEe2A6ZKPhF6jfw" name="updated" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_VzFyruETEe2A6ZKPhF6jfw" name="setState" visibility="public">
+          <ownedParameter xmi:id="_VzFyr-ETEe2A6ZKPhF6jfw" name="state">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_VzFysOETEe2A6ZKPhF6jfw" name="getState" visibility="public">
+          <ownedParameter xmi:id="_VzFyseETEe2A6ZKPhF6jfw" name="state" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_VzO8cOETEe2A6ZKPhF6jfw" name="setReleased" visibility="public">
+          <ownedParameter xmi:id="_VzO8ceETEe2A6ZKPhF6jfw" name="released">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_VzO8cuETEe2A6ZKPhF6jfw" name="getReleased" visibility="public">
+          <ownedParameter xmi:id="_VzO8c-ETEe2A6ZKPhF6jfw" name="released" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_VzO8dOETEe2A6ZKPhF6jfw" name="setUpdated" visibility="public">
+          <ownedParameter xmi:id="_VzO8deETEe2A6ZKPhF6jfw" name="updated">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_VzO8duETEe2A6ZKPhF6jfw" name="getUpdated" visibility="public">
+          <ownedParameter xmi:id="_VzO8d-ETEe2A6ZKPhF6jfw" name="updated" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+  </uml:Model>
+  <uml:Model xmi:id="_Vyk1JuETEe2A6ZKPhF6jfw" name="Base"/>
+  <uml:Model xmi:id="_Vyk1J-ETEe2A6ZKPhF6jfw" name="Issue"/>
+  <uml:Model xmi:id="_Vyk1KOETEe2A6ZKPhF6jfw" name="Project"/>
+  <uml:Model xmi:id="_Vyk1KeETEe2A6ZKPhF6jfw" name="PrimitiveTypes"/>
+  <uml:Model xmi:id="_Vyk1KuETEe2A6ZKPhF6jfw" name="EcorePrimitiveTypes"/>
+  <uml:Association xmi:id="_Vy8BpOETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_Vy8BpeETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_Vy8BpuETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_Vy8Bp-ETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_Vy8BqOETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_Vy8Bv-ETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_Vy8BwOETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_Vy8BweETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_Vy8BwuETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFygOETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFygeETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyguETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyg-ETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyhOETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyheETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyh-ETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyiOETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyieETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyiuETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyi-ETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyjOETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyjeETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyjuETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyj-ETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFykOETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFykeETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFykuETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyk-ETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFylOETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyleETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyluETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFyl-ETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFymOETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFymeETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzFymuETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8eOETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8eeETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8euETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8e-ETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8fOETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8feETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8fuETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8f-ETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8gOETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8geETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8guETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8g-ETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+    <memberEnd href="../../../BugTracker.uml#_ohRM0clBEe2LjtXVys48lg"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8hOETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8heETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8huETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8h-ETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8iOETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8ieETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8iuETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+    <memberEnd href="../../../BugTracker.uml#_Q-ksoslDEe2LjtXVys48lg"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8i-ETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8jOETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8jeETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8juETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8j-ETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8kOETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8keETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8kuETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8k-ETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8lOETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+    <memberEnd href="../../../BugTracker.uml#_J9CCYNkvEe2F49EgGcOaxg"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8leETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8luETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+    <memberEnd href="../../../BugTracker.uml#_jC-YIclBEe2LjtXVys48lg"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8l-ETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8mOETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8meETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8muETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8m-ETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8nOETEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8neETEe2A6ZKPhF6jfw" visibility="package">
+    <name xsi:nil="true"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzO8nuETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+    <memberEnd href="../../../BugTracker.uml#_XQ1U4slDEe2LjtXVys48lg"/>
+  </uml:Association>
+  <uml:Association xmi:id="_VzYtcOETEe2A6ZKPhF6jfw" visibility="private">
+    <name xsi:nil="true"/>
+  </uml:Association>
+</xmi:XMI>

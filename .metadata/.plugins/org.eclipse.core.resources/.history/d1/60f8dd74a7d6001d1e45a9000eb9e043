@@ -1,0 +1,58 @@
+package BugTracker;
+
+import BugTracker.Project.Project;
+import BugTracker.Project.Version;
+import BugTracker.Issue.Issue;
+
+
+
+public class BugTracker {
+	private Project project;
+
+	private Version version;
+
+	private Issue issue;
+
+
+
+	private void setProject(Project project) {
+		this.project=project;
+	}
+
+	private void setVersion(Version version) {
+		this.version=version;
+	}
+
+	private void issueExists(Issue issue) {
+		issue.getID()==0
+	}
+
+	private void updateState(state state) {
+		
+	}
+
+	private void setIssue(Issue issue) {
+		this.issue=issue;
+	}
+
+	private void addDeveloper(User user) {
+		
+	}
+
+	public void save() {
+		
+	}
+
+	public void saveIssue(Version version, Project project, Issue issue, User developer) {
+		
+	}
+
+
+
+	public enum state {
+		new,
+		update
+	}
+
+
+}

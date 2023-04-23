@@ -1,0 +1,18 @@
+package [%=p.select(p|p.packagedElement.select(c|c.name==cl.name).size==1 and p.type.name=="Package").name.last%];
+
+public class [%=cl.name%] {
+[%for(elem in cl.ownedAttribute) {%]
+	[%=elem.visibility%] [%if(elem.isStatic){%]static[%}%] [%=elem.type.name%] [%=elem.name%];
+[%}%]
+
+[%for(op in cl.ownedOperation) {%]
+	[%=getReturnType(op)%]
+[%}%]
+}
+[%
+@template
+operation String getReturnType(op: OwnedOperation) {
+	var items = op.ownedParameter.select(p|p.direction=="return");
+	items.println();
+}
+%]

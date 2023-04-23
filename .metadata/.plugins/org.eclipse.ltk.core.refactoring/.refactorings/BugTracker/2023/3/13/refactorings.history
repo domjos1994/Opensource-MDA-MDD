@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;EWL&apos; to &apos;Epsilon&apos;" description="Move &apos;EWL&apos; to &apos;Epsilon&apos;" destination="Epsilon" element1="EMF/EWL" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1680016942626" updateReferences="true"/>
+</session>

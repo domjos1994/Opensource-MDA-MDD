@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Class xmi:id="_RKMO0N4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKMO0d4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKMO0t4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKMO094gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKMO1N4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKMO1d4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKMO1t4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKMO194gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKMO2N4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKM14N4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKM14d4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKM14t4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKM1494gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_RKM15N4gEe2b-cW_QU3v2g"/>
+  <uml:Operation xmi:id="_RKM15d4gEe2b-cW_QU3v2g" name="TitledObject"/>
+</xmi:XMI>

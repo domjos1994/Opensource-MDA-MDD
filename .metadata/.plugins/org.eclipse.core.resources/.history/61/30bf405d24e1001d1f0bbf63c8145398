@@ -1,0 +1,16 @@
+module ExtractToSuperClass;
+create OUT: UML refining IN: UML;
+
+helper context UML!Property def: hasSameProperty(cls: UML!Class): Boolean =
+	for(prop in cls.property) {
+		if self.name = prop.name then
+			true
+		endif
+	}
+	false;
+
+rule ExtractParametersToSuperClass {
+	from oldC1: UML!Property, oldC2: UML!Property
+	to 
+		newC12: UML!Class(name <- oldC1.getSameProperty(oldC2))
+}

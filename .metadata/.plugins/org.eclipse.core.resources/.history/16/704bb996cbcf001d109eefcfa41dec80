@@ -1,0 +1,10 @@
+rule Class2Code
+	transform cl: Class {
+		parameters: Map {
+			"p" = Package.allInstances(),
+			"s" = Entry.base_Class.allInstances()
+		}
+	
+		template: "Generator.egl"
+		target: "../Output/" + cl.name + ".java"
+	}

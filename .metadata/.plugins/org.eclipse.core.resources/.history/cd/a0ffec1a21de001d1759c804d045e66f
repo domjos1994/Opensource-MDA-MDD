@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Class xmi:id="_WhxXgN4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-kN4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-kd4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-kt4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-k94gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-lN4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-ld4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-lt4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-l94gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-mN4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-md4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-mt4gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-m94gEe2b-cW_QU3v2g"/>
+  <uml:Class xmi:id="_Whx-nN4gEe2b-cW_QU3v2g"/>
+  <uml:Operation xmi:id="_WhyloN4gEe2b-cW_QU3v2g" name="TitledObject"/>
+</xmi:XMI>

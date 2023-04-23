@@ -1,0 +1,10 @@
+module ExtractToSuperClass;
+create OUT: UML refining IN: UML;
+
+rule ExtractParametersToSuperClass {
+	from oldC1: OUT!Class, oldC2: OUT!Class2
+	to 
+		newC1: oneton!Class1(ID <- oldC1.ID),
+		newC2: oneton!Class2(ID <- oldC2.ID),
+		c12: oneton!Class12(ID1 <- oldC1.ID, ID2 <- oldC2.ID)
+}

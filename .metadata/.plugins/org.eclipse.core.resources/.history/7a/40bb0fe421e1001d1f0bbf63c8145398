@@ -1,0 +1,16 @@
+module ExtractToSuperClass;
+create OUT: UML refining IN: UML;
+
+helper context UML!Property def: getSameProperty(prop: UML!Property): String =
+	if self.name = prop.name then
+		self.name
+	else
+		''
+	endif;
+
+rule ExtractParametersToSuperClass {
+	from oldC1: UML!Property, oldC2: UML!Class
+	to 
+		newC1: UML!Class(name <- 'Test'),
+		newC2: UML!Class(name <- 'Test')
+}

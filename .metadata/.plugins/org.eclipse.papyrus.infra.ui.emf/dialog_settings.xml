@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Type:type">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_tbxfUMk-Ee2LjtXVys48lg"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_xxpMAMlBEe2LjtXVys48lg"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_Ya4HoMprEe2TnMFR3YHyCg"/>
+				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+				<item value="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_sMA1sMlAEe2LjtXVys48lg"/>
+				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_O1wDIMk8Ee2LjtXVys48lg"/>
+				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Type:type">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_sMA1sMlAEe2LjtXVys48lg"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_tbxfUMk-Ee2LjtXVys48lg"/>
+				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_O1wDIMk8Ee2LjtXVys48lg"/>
+				<item value="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
+				<item value="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+				<item value="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Constraint:precondition">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Element:constrainedElement">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Constraint:bodyCondition">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Behavior:method">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_GD4nUN6lEe2oKYyPGTS20w"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_jKlIkNkyEe2F49EgGcOaxg"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_3wKs4NIpEe2iSqVHwBYe_g"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_org.eclipse.papyrus.infra.hyperlink.specificHyperLinks">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.notation#_BnD48cf3Ee2rKOZ8A5U7rQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_platform:/resource/BugTracker/BugTracker.uml:uml:Behavior:method">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_tdCFEMf1Ee2rKOZ8A5U7rQ"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_TsN1kMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:BehavioralFeature:specification">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_uml:Event:event">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_lResgMlAEe2LjtXVys48lg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Event:event">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_GN8lANLuEe2rnpl39A1D4A"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Operation:operation">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_uVhPcMpqEe2TnMFR3YHyCg"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_Jckf0MpsEe2TnMFR3YHyCg"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_Oo6MYMf8Ee2rKOZ8A5U7rQ"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_CXK_4MprEe2TnMFR3YHyCg"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_1nnkEMpqEe2TnMFR3YHyCg"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_kE3w8Mf3Ee2rKOZ8A5U7rQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:BehavioralFeature:specification">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_Jckf0MpsEe2TnMFR3YHyCg"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_uVhPcMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_uml:BehavioralFeature:specification">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_TsN1kMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Port:port">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_8CJMYMxrEe2FeLZiCTMHXQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Constraint:postcondition">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:InstanceSpecification:instance">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_uml:InstanceSpecification:instance">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_tdCFEMf1Ee2rKOZ8A5U7rQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Classifier:classifier">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_O1wDIMk8Ee2LjtXVys48lg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:StateMachine:submachine">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:UseCase:useCase">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Namespace:context">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_OXdy0OExEe29gdJfyQ9VYw"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_OXQ-gOExEe29gdJfyQ9VYw"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_uVhPcMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:InstanceSpecification:instance">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_dxibkMpxEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_platform:/resource/BugTracker/BugTracker.uml:uml:InstanceSpecification:instance">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_lnmkcMf2Ee2rKOZ8A5U7rQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Constraint:postcondition">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_tkLSMOFMEe29gdJfyQ9VYw"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_ecTvcOExEe29gdJfyQ9VYw"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_uml:Element:constrainedElement">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_CXK_4MprEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:UseCase:useCase">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_uml:UseCase:useCase">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_tdCFEMf1Ee2rKOZ8A5U7rQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Classifier:subject">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_TsN1kMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_uml:Classifier:subject">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_tdCFEMf1Ee2rKOZ8A5U7rQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_uml:Port:port">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_TsN1kMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_platform:/resource/BugTracker/BugTracker.uml:uml:BehavioralFeature:specification">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_TsN1kMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Behavior:method">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_platform:/resource/BugTracker/BugTracker.uml:uml:UseCase:useCase">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_tdCFEMf1Ee2rKOZ8A5U7rQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Port:port">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_8CJMYMxrEe2FeLZiCTMHXQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_platform:/resource/BugTracker/BugTracker.uml:uml:Port:port">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_3wKs4NIpEe2iSqVHwBYe_g"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_hrw5oMpqEe2TnMFR3YHyCg"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_qn9YkMpqEe2TnMFR3YHyCg"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_Z_cuMMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Interface:provided">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_uml:Interface:provided">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_TsN1kMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Property:subsettedProperty">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_Z_cuMMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Operation:operation">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_1nnkEMpqEe2TnMFR3YHyCg"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_uVhPcMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Interface:provided">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_platform:/resource/BugTracker/BugTracker.uml:uml:Interface:provided">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_TsN1kMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Signal:signal">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_GPRc0MxuEe2FeLZiCTMHXQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_uml:Signal:signal">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_TsN1kMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Property:redefinedProperty">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_Z_cuMMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Constraint:guard">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_zQsq0N4EEe2b-cW_QU3v2g"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Event:event">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_platform:/resource/BugTracker/BugTracker.uml:uml:Event:event">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_tdCFEMf1Ee2rKOZ8A5U7rQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_uml:Operation:operation">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_TsN1kMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_uml:Behavior:method">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_tdCFEMf1Ee2rKOZ8A5U7rQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__uml:Behavior:behavior">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_uml:Behavior:behavior">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_tdCFEMf1Ee2rKOZ8A5U7rQ"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Namespace:context">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_OXQ-gOExEe29gdJfyQ9VYw"/>
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_O1wDIMk8Ee2LjtXVys48lg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history_container_platform:/resource/BugTracker/BugTracker.uml:uml:Namespace:context">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_TsN1kMpqEe2TnMFR3YHyCg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.customizationManager">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Constraint:stateInvariant">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:State:inState">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Port:onPort">
+		<section name="History">
+			<list key="PreviousSelection">
+				<item value="platform:/resource/BugTracker/BugTracker.uml#_NgxnMNk1Ee2F49EgGcOaxg"/>
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/BugTracker.uml:uml:Behavior:classifierBehavior">
+	</section>
+	<section name="org.eclipse.papyrus.infra.ui.emf.providers.EMFGraphicalContentProvider_history__platform:/resource/BugTracker/other.uml:uml:Behavior:behavior">
+	</section>
+</section>

@@ -1,0 +1,8 @@
+#Sat Apr 22 22:43:02 CEST 2023
+_label_BugTracker__smSaveIssue__Region1__SelectProject=setProject(project)
+_label_selectProject=selectProject
+_label_BugTracker__smSaveIssue__Region1__SetIssue=setIssue(issue)
+_label_BugTracker__smSaveIssue__Region1__AddDeveloper=addDeveloper(developer)
+_label_BugTracker__smSaveIssue__Region1__SelectVersion=setVersion(version)
+_label_BugTracker__smSaveIssue__Region1__IssueExists=issueExists(issue)
+_label_BugTracker__smSaveIssue__Region1__Save=save()

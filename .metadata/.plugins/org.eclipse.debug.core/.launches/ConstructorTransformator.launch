@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.epsilon.etl.eclipse.dt.launching.EtlLaunchConfigurationDelegate">
+    <booleanAttribute key="fine_grained_profiling" value="false"/>
+    <stringAttribute key="implementation_name" value="Parallel (Declarative operations)"/>
+    <listAttribute key="models">
+        <listEntry value="#Wed Apr 19 19:02:30 CEST 2023&#13;&#10;storeOnDisposal=false&#13;&#10;expand=true&#13;&#10;aliases=&#13;&#10;modelFile=/BugTracker/BugTracker.uml&#13;&#10;cached=true&#13;&#10;name=Source&#13;&#10;concurrent=false&#13;&#10;type=UML&#13;&#10;readOnLoad=true"/>
+        <listEntry value="#Wed Apr 19 19:00:18 CEST 2023&#13;&#10;storeOnDisposal=true&#13;&#10;expand=true&#13;&#10;aliases=&#13;&#10;modelFile=/BugTracker/Epsilon/ETL/output/Bugtracker.uml&#13;&#10;cached=true&#13;&#10;name=Target&#13;&#10;concurrent=false&#13;&#10;type=UML&#13;&#10;readOnLoad=false"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
+    <intAttribute key="parallelism" value="3"/>
+    <listAttribute key="parameters"/>
+    <booleanAttribute key="profile_model_loading" value="false"/>
+    <booleanAttribute key="profiling_enabled" value="false"/>
+    <booleanAttribute key="reset_profiler" value="false"/>
+    <stringAttribute key="source" value="/BugTracker/Epsilon/ETL/EntryExtractor.etl"/>
+</launchConfiguration>

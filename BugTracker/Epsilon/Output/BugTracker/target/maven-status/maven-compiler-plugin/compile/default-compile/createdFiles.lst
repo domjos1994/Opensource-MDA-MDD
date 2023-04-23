@@ -1,0 +1,9 @@
+BugTracker\Main.class
+BugTracker\Base\TitledObject.class
+BugTracker\Base\BaseObject.class
+BugTracker\Base\User.class
+BugTracker\Project\Project.class
+BugTracker\Base\Tag.class
+BugTracker\Base\Category.class
+BugTracker\Issue\Issue.class
+BugTracker\Project\Version.class

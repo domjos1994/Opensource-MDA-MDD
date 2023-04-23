@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_TMLy9-EZEe2A6ZKPhF6jfw" name="BugTracker">
+    <packagedElement xmi:type="uml:Package" xmi:id="_TMLy_eEZEe2A6ZKPhF6jfw" name="Model"/>
+  </uml:Model>
+  <uml:Model xmi:id="_TMLy-OEZEe2A6ZKPhF6jfw"/>
+  <uml:Model xmi:id="_TMLy-eEZEe2A6ZKPhF6jfw"/>
+  <uml:Model xmi:id="_TMLy-uEZEe2A6ZKPhF6jfw"/>
+  <uml:Model xmi:id="_TMLy--EZEe2A6ZKPhF6jfw"/>
+  <uml:Model xmi:id="_TMLy_OEZEe2A6ZKPhF6jfw"/>
+  <uml:Package xmi:id="_TMVj8OEZEe2A6ZKPhF6jfw" name="Issue">
+    <packagedElement xmi:type="uml:Class" xmi:id="_TMVj8eEZEe2A6ZKPhF6jfw" name="Issue" visibility="public">
+      <generalization xmi:id="_TMVj8uEZEe2A6ZKPhF6jfw">
+        <general xmi:type="uml:Class" href="../../../BugTracker.uml#_wWnZ8Mf4Ee2rKOZ8A5U7rQ"/>
+      </generalization>
+      <ownedAttribute xmi:id="_TMVj8-EZEe2A6ZKPhF6jfw" name="summary" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_TMVj9OEZEe2A6ZKPhF6jfw" name="stepsToReproduce" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_TMVj9eEZEe2A6ZKPhF6jfw" name="OS" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_TMVj9uEZEe2A6ZKPhF6jfw" name="tag" visibility="public">
+        <type xmi:type="uml:Class" href="../../../BugTracker.uml#_DbyFQMf_Ee2rKOZ8A5U7rQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_TMVj9-EZEe2A6ZKPhF6jfw" name="category" visibility="public" association="_TMVkBuEZEe2A6ZKPhF6jfw">
+        <type xmi:type="uml:Class" href="../../../BugTracker.uml#__rGB4Mf-Ee2rKOZ8A5U7rQ"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_TMVj-OEZEe2A6ZKPhF6jfw" name="user" visibility="public">
+        <type xmi:type="uml:Class" href="../../../BugTracker.uml#_xxpMAMlBEe2LjtXVys48lg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_TMVj-eEZEe2A6ZKPhF6jfw" name="version" visibility="public">
+        <type xmi:type="uml:Class" href="../../../BugTracker.uml#_tbxfUMk-Ee2LjtXVys48lg"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_TMVj-uEZEe2A6ZKPhF6jfw" name="setSummary" visibility="public">
+        <ownedParameter xmi:id="_TMVj--EZEe2A6ZKPhF6jfw" name="summary">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_TMVj_OEZEe2A6ZKPhF6jfw" name="getSummary" visibility="public">
+        <ownedParameter xmi:id="_TMVj_eEZEe2A6ZKPhF6jfw" name="summary" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_TMVj_uEZEe2A6ZKPhF6jfw" name="setStepsToReproduce" visibility="public">
+        <ownedParameter xmi:id="_TMVj_-EZEe2A6ZKPhF6jfw" name="stepsToReproduce">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_TMVkAOEZEe2A6ZKPhF6jfw" name="getStepsToReproduce" visibility="public">
+        <ownedParameter xmi:id="_TMVkAeEZEe2A6ZKPhF6jfw" name="stepsToReproduce" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_TMVkAuEZEe2A6ZKPhF6jfw" name="setOS" visibility="public">
+        <ownedParameter xmi:id="_TMVkA-EZEe2A6ZKPhF6jfw" name="OS">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_TMVkBOEZEe2A6ZKPhF6jfw" name="getOS" visibility="public">
+        <ownedParameter xmi:id="_TMVkBeEZEe2A6ZKPhF6jfw" name="OS" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+  </uml:Package>
+  <uml:Association xmi:id="_TMVkBuEZEe2A6ZKPhF6jfw" visibility="package" memberEnd="_TMVj9-EZEe2A6ZKPhF6jfw">
+    <eAnnotations xmi:id="_ohQlwMlBEe2LjtXVys48lg" source="org.eclipse.papyrus">
+      <details xmi:id="_ohRM0MlBEe2LjtXVys48lg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <name xsi:nil="true"/>
+  </uml:Association>
+</xmi:XMI>

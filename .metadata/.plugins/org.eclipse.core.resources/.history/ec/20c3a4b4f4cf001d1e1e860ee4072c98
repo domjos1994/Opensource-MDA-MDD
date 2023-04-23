@@ -1,0 +1,71 @@
+[%
+	// Public Part
+	// Here is the part of the content which will be printed in the file
+%]
+package [%=p.replace("/", ".")%];
+
+[%=cl.printHeader()%]
+[%=cl.getProperties()%]
+
+}
+
+[%
+// Functional part
+
+@template
+operation Class getProperties() {
+	for(ownedAttribute in self.ownedAttribute) {
+		if(ownedAttribute.isTypeOf(Property)) {
+			%][%=ownedAttribute.buildProperty()%][%
+		}
+	}
+}
+
+@template
+operation Property buildProperty() {
+	var visibility = self.visibility;
+	var name = self.name;
+	var static = (self.isStatic() ? " static " : " ");
+	var type = self.type.name;
+	
+	var property = "\t" + visibility + static + type + " " + name + ";\n";
+	%][%=property%][% 
+}
+
+@template
+operation Class printHeader() {
+	var visibility = self.visibility;
+	var name = self.name;
+	var extends = (self.generalization.size==1 ? " extends " + self.generalization[0].general.name : "");
+	
+	var header = visibility + " class " + name + extends + " {";
+	
+	%][%=header%][%
+}
+
+@template
+operation Enumeration createEnumeration() {
+	var content = self.visibility + " enum " + self.name + " {";
+	
+	var items = "";
+	for(item in self.ownedLiteral) {
+		if(items=="") {
+			items = "\t" + item.name;
+		} else {
+			items = items + ",\n\t" + item.name;
+		}
+	}
+	content = content + "\n" + items + "\n}";
+	%][%=content%][%
+}
+
+@template
+operation Class isEntry(): String {
+	var items = self.getAppliedStereotypes().select(c|c.name="Entry");
+	if(items.size==1) {
+		return true;
+	} else {
+		return false;
+	}
+}
+%]

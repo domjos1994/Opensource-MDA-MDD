@@ -1,0 +1,163 @@
+[%
+	// State Machine 
+%] 
+
+[%
+
+
+operation StateMachine createStateMachine(): String {
+	var content = "";
+	if(self.region.size()==1) {
+		var region = self.region[0];
+		var initial = region.findStartState();
+		var nextTransition = region.findNextTransition(initial.id);
+		while(nextTransition!=null) {
+			var state = region.findNextState(nextTransition.target.id);
+			if(state == null) {
+				state = region.findNextPseudoState(nextTransition.target.id);
+				if(state == null) {
+					state = region.findNextFinalState(nextTransition.target.id);
+				} else {
+					content += state.printIf(nextTransition, region) + "\n";
+					state = region.getNextSimpleState(nextTransition);
+					nextTransition = region.findNextTransition(state.id);
+					continue;
+				}
+			}
+			
+			var effect = nextTransition.printEffect();
+			if((state.isTypeOf(Pseudostate) and not state.isChoice()) or not state.isTypeOf(Pseudostate)) {
+				if(effect.trim()!="") {
+					content += effect + "\n";
+				}
+			}
+			
+			nextTransition = region.findNextTransition(state.id);
+		}
+	}
+	return content.trim();
+}
+
+operation Pseudostate printIf(transition: Transition, region: Region): String {
+	var endState = region.getNextSimpleState(transition);
+	var transitions = region.getAlltransitions(self.id);
+	transitions.println();
+}
+
+operation Region getNextSimpleState(transition: Transition) {
+	var findBack = false;
+	for(trans in self.transition) {
+		if(trans.target.id==transition.target.id and trans.id!=transition.id) {
+			findBack = true;
+		}
+	}
+	
+	var tmp = null;
+	if(not findBack) {
+		for(trans in self.transition) {
+			if(trans.source.id==transition.target.id) {
+				tmp = self.getNextSimpleState(trans);
+				break;		
+			}
+		}
+	} else {
+		return transition.target;
+	}
+	
+	
+	return tmp;
+}
+
+operation Transition getSpecification(): Boolean {
+	if(self.guard != null) {
+		var guard = self.guard;
+		if(guard.specification != null) {
+			var spec = guard.specification;
+			return spec.value;
+		}
+	}
+	return false;
+}
+
+operation Pseudostate isChoice(): Boolean {
+	return self.kind.toString() == "choice";
+}
+
+operation Region findStartState() : Pseudostate {
+	for(vertex in self.subvertex) {
+		if(vertex.isTypeOf(Pseudostate)) {
+			if(vertex.kind.name.equals("initial")) {
+				return vertex;
+			}
+		}
+	}
+	return null;
+}
+
+operation Region findNextTransition(id: String): Transition {
+	for(transition in self.transition) {
+		if(id==transition.source.id) {
+			return transition;
+		}
+	}
+	return null;
+}
+
+operation Region findAllTransitions(id: String): List<Transition> {
+	var lst = new List<Transition>();
+	for(transition in self.transition) {
+		if(id==transition.source.id) {
+			lst.add(transition);
+		}
+	}
+	return lst;
+}
+
+operation Region findNextState(id: String): State {
+	for(vertex in self.subvertex) {
+		if(vertex.isTypeOf(State)) {
+			if(id==vertex.id) {
+				return vertex;
+			}
+		}
+	}
+	return null;
+}
+operation Region findNextPseudoState(id: String): Pseudostate {
+	for(vertex in self.subvertex) {
+		if(vertex.isTypeOf(Pseudostate)) {
+			if(id==vertex.id) {
+				return vertex;
+			}
+		}
+	}
+	return null;
+}
+operation Region findNextFinalState(id: String): FinalState {
+	for(vertex in self.subvertex) {
+		if(vertex.isTypeOf(FinalState)) {
+			if(id==vertex.id) {
+				return vertex;
+			}
+		}
+	}
+	return null;
+}
+
+operation Transition printEffect(): String {
+	var content = "";
+	if(self.effect != null) {
+		for(line in self.effect.body) {
+			if(line!="") {
+				if(line.endsWith(";")) {
+					content += "\t\t" + line + "\n";
+				} else {
+					content += "\t\t" + line + ";\n";
+				}
+			}
+		}		
+	}
+	return content.trim();
+}
+
+%]

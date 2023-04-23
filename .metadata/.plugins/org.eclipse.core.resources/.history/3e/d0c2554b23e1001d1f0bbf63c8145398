@@ -1,0 +1,17 @@
+module ExtractToSuperClass;
+create OUT: UML refining IN: UML;
+
+helper context UML!Property def: getSameProperty(cls: UML!Class): List<UML!Property> =
+	let props: List<UML!Property>
+	for(prop in cls.ownedProperty) {
+		if self.name = prop.name then
+			props.add(self)
+		endif
+	}
+	props;
+
+rule ExtractParametersToSuperClass {
+	from oldC1: UML!Property, oldC2: UML!Property
+	to 
+		newC12: UML!Class(name <- oldC1.getSameProperty(oldC2))
+}

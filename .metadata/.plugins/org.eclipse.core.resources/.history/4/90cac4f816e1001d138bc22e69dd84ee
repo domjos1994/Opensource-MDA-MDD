@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_REnJ1-EWEe2A6ZKPhF6jfw" name="BugTracker"/>
+  <uml:Model xmi:id="_REnJ2OEWEe2A6ZKPhF6jfw"/>
+  <uml:Model xmi:id="_REnJ2eEWEe2A6ZKPhF6jfw"/>
+  <uml:Model xmi:id="_REnJ2uEWEe2A6ZKPhF6jfw"/>
+  <uml:Model xmi:id="_REnJ2-EWEe2A6ZKPhF6jfw"/>
+  <uml:Model xmi:id="_REnJ3OEWEe2A6ZKPhF6jfw"/>
+  <uml:Package xmi:id="_REwTwOEWEe2A6ZKPhF6jfw" name="Project">
+    <packagedElement xmi:type="uml:Class" xmi:id="_REwTweEWEe2A6ZKPhF6jfw" name="Version" visibility="public">
+      <generalization xmi:id="_REwTwuEWEe2A6ZKPhF6jfw">
+        <general xmi:type="uml:Class" href="../../../BugTracker.uml#_wWnZ8Mf4Ee2rKOZ8A5U7rQ"/>
+      </generalization>
+      <ownedAttribute xmi:id="_REwTw-EWEe2A6ZKPhF6jfw" name="state" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_REwTxOEWEe2A6ZKPhF6jfw" name="released" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_REwTxeEWEe2A6ZKPhF6jfw" name="project" visibility="public">
+        <type xmi:type="uml:Class" href="../../../BugTracker.uml#_O1wDIMk8Ee2LjtXVys48lg"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_REwTxuEWEe2A6ZKPhF6jfw" name="setState" visibility="public">
+        <ownedParameter xmi:id="_REwTx-EWEe2A6ZKPhF6jfw" name="state">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_REwTyOEWEe2A6ZKPhF6jfw" name="getState" visibility="public">
+        <ownedParameter xmi:id="_REwTyeEWEe2A6ZKPhF6jfw" name="state" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_REwTyuEWEe2A6ZKPhF6jfw" name="setReleased" visibility="public">
+        <ownedParameter xmi:id="_REwTy-EWEe2A6ZKPhF6jfw" name="released">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_REwTzOEWEe2A6ZKPhF6jfw" name="getReleased" visibility="public">
+        <ownedParameter xmi:id="_REwTzeEWEe2A6ZKPhF6jfw" name="released" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_REwTzuEWEe2A6ZKPhF6jfw" name="Project" visibility="public">
+      <generalization xmi:id="_REwTz-EWEe2A6ZKPhF6jfw">
+        <general xmi:type="uml:Class" href="../../../BugTracker.uml#_wWnZ8Mf4Ee2rKOZ8A5U7rQ"/>
+      </generalization>
+      <ownedAttribute xmi:id="_REwT0OEWEe2A6ZKPhF6jfw" name="state" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_REwT0eEWEe2A6ZKPhF6jfw" name="released" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_REwT0uEWEe2A6ZKPhF6jfw" name="updated" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_REwT0-EWEe2A6ZKPhF6jfw" name="setState" visibility="public">
+        <ownedParameter xmi:id="_REwT1OEWEe2A6ZKPhF6jfw" name="state">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_REwT1eEWEe2A6ZKPhF6jfw" name="getState" visibility="public">
+        <ownedParameter xmi:id="_REwT1uEWEe2A6ZKPhF6jfw" name="state" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_REwT1-EWEe2A6ZKPhF6jfw" name="setReleased" visibility="public">
+        <ownedParameter xmi:id="_REwT2OEWEe2A6ZKPhF6jfw" name="released">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_REwT2eEWEe2A6ZKPhF6jfw" name="getReleased" visibility="public">
+        <ownedParameter xmi:id="_REwT2uEWEe2A6ZKPhF6jfw" name="released" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_REwT2-EWEe2A6ZKPhF6jfw" name="setUpdated" visibility="public">
+        <ownedParameter xmi:id="_REwT3OEWEe2A6ZKPhF6jfw" name="updated">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_REwT3eEWEe2A6ZKPhF6jfw" name="getUpdated" visibility="public">
+        <ownedParameter xmi:id="_REwT3uEWEe2A6ZKPhF6jfw" name="updated" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+  </uml:Package>
+  <uml:Association xmi:id="_REwT3-EWEe2A6ZKPhF6jfw" visibility="public">
+    <name xsi:nil="true"/>
+    <memberEnd href="../../../BugTracker.uml#_Q-ksoslDEe2LjtXVys48lg"/>
+  </uml:Association>
+</xmi:XMI>
