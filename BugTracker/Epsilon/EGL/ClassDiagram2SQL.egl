@@ -1,0 +1,81 @@
+[% m.findClasses();%]
+
+[%
+
+operation Package findClasses() {
+	for(element in self.packagedElement) {
+		if(element.isTypeOf(Class)) {
+			%][%=element.buildClass()%][%
+		} else if(element.isTypeOf(Package)) {
+			element.findClasses();
+		} else if(element.isTypeOf(Association)) {
+			%][%="\n" + element.buildAssociation()%][%
+		}
+	}
+}
+
+operation Class buildClass(): String {
+	var sql = "";
+	
+	if(self.getAppliedStereotypes().select(c|c.name="Entry").size!=0) {
+		var name = self.name;
+		
+		sql += "CREATE TABLE " + name + "(";
+		
+		var lst = new List<Property>();
+		for(generalization in self.generalization) {
+			lst = generalization.findProperties(lst);
+		}
+		
+		for(property in lst) {
+			sql += property.buildParameter() + ", ";
+		}
+		for(property in self.ownedAttribute) {
+			sql += property.buildParameter() + ", ";
+		}
+		if(self.ownedAttribute.size()==0 and lst.size()==0) {
+			sql += ");\n";
+		} else {
+			sql = sql.substring(0, sql.length()-2) + ");\n";
+		}
+	}
+	
+	return sql;
+}
+
+operation Generalization findProperties(lst: List<Property>): List<Property> {
+	for(property in self.general.ownedAttribute) {
+		lst.add(property);
+	}
+	for(generalization in self.general.generalization) {
+		lst = generalization.findProperties(lst);
+	}
+	return lst;
+}
+
+operation Property buildParameter(): String {
+	var name = self.name;
+	var type = self.type.name;
+	
+	switch(type) {
+		case "String":
+			type = "VARCHAR(255)";
+			break;
+		case "EDATE":
+			type = "DATE";
+			break;		
+	}
+	
+	return name + " " + type;
+}
+
+operation Association buildAssociation(): String {
+	var start = self.memberEnd.get(0);
+	var end = self.memberEnd.get(1);
+	
+	var foreign = "ALTER TABLE " + start.name + " ADD COLUMN " + end.name + "_id INTEGER;\n";
+	foreign += "ALTER TABLE " + start.name + " ADD FOREIGN KEY(" + end.name + "_id) REFERENCES " + end.name + "(id);\n";
+	return foreign;
+}
+
+%]

@@ -1,21 +1,2 @@
 INDEX VERSION 1.132+C:\Users\hae\workspace-papyrus\.metadata\.plugins\org.eclipse.jdt.core
-3223952324.index
-1706839007.index
-1695749723.index
-594274870.index
-3064806579.index
-4178113377.index
-3670279201.index
-2855815653.index
-2172263461.index
-2827536810.index
-2700006227.index
-3963137876.index
-596922700.index
-3394852775.index
-1469358655.index
-2821594247.index
 1865797976.index
-452486004.index
-2051644357.index
-2474647194.index

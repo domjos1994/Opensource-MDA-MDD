@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_pm79AONvEe2us8PdE3qpIw" name="Sequence-Diagrams">
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_pm79BuNvEe2us8PdE3qpIw" name="IssueExists">
+      <lifeline xmi:id="_pm79B-NvEe2us8PdE3qpIw" coveredBy="_pm79D-NvEe2us8PdE3qpIw">
+        <name xsi:nil="true"/>
+      </lifeline>
+      <lifeline xmi:id="_pm79CONvEe2us8PdE3qpIw" name="S2" coveredBy="_pnFuAONvEe2us8PdE3qpIw _pnFuAuNvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pm79CeNvEe2us8PdE3qpIw" name="" coveredBy="_pnFuA-NvEe2us8PdE3qpIw _pnFuBeNvEe2us8PdE3qpIw _pnFuCONvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pm79CuNvEe2us8PdE3qpIw" name="Null" coveredBy="_pnFuBuNvEe2us8PdE3qpIw _pnFuDuNvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pm79C-NvEe2us8PdE3qpIw" name="Is Not Null" coveredBy="_pnFuCeNvEe2us8PdE3qpIw _pnFuC-NvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pm79DONvEe2us8PdE3qpIw" name="FinalState10" coveredBy="_pnFuEeNvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pm79DeNvEe2us8PdE3qpIw" name="Return" coveredBy="_pnFuDONvEe2us8PdE3qpIw _pnFuD-NvEe2us8PdE3qpIw _pnFuEuNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pm79D-NvEe2us8PdE3qpIw" covered="_pm79B-NvEe2us8PdE3qpIw" message="_pm79DuNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuAONvEe2us8PdE3qpIw" covered="_pm79CONvEe2us8PdE3qpIw" message="_pm79DuNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuAuNvEe2us8PdE3qpIw" covered="_pm79CONvEe2us8PdE3qpIw" message="_pnFuAeNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuA-NvEe2us8PdE3qpIw" covered="_pm79CeNvEe2us8PdE3qpIw" message="_pnFuAeNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuBeNvEe2us8PdE3qpIw" covered="_pm79CeNvEe2us8PdE3qpIw" message="_pnFuBONvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuBuNvEe2us8PdE3qpIw" covered="_pm79CuNvEe2us8PdE3qpIw" message="_pnFuBONvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuCONvEe2us8PdE3qpIw" covered="_pm79CeNvEe2us8PdE3qpIw" message="_pnFuB-NvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuCeNvEe2us8PdE3qpIw" covered="_pm79C-NvEe2us8PdE3qpIw" message="_pnFuB-NvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuC-NvEe2us8PdE3qpIw" covered="_pm79C-NvEe2us8PdE3qpIw" message="_pnFuCuNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuDONvEe2us8PdE3qpIw" covered="_pm79DeNvEe2us8PdE3qpIw" message="_pnFuCuNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuDuNvEe2us8PdE3qpIw" covered="_pm79CuNvEe2us8PdE3qpIw" message="_pnFuDeNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuD-NvEe2us8PdE3qpIw" covered="_pm79DeNvEe2us8PdE3qpIw" message="_pnFuDeNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuEeNvEe2us8PdE3qpIw" covered="_pm79DONvEe2us8PdE3qpIw" message="_pnFuEONvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuEuNvEe2us8PdE3qpIw" covered="_pm79DeNvEe2us8PdE3qpIw" message="_pnFuEONvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pm79DuNvEe2us8PdE3qpIw" receiveEvent="_pnFuAONvEe2us8PdE3qpIw" sendEvent="_pm79D-NvEe2us8PdE3qpIw">
+        <name xsi:nil="true"/>
+      </message>
+      <message xmi:id="_pnFuAeNvEe2us8PdE3qpIw" name="Is Null" receiveEvent="_pnFuA-NvEe2us8PdE3qpIw" sendEvent="_pnFuAuNvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnFuBONvEe2us8PdE3qpIw" receiveEvent="_pnFuBuNvEe2us8PdE3qpIw" sendEvent="_pnFuBeNvEe2us8PdE3qpIw">
+        <name xsi:nil="true"/>
+      </message>
+      <message xmi:id="_pnFuB-NvEe2us8PdE3qpIw" receiveEvent="_pnFuCeNvEe2us8PdE3qpIw" sendEvent="_pnFuCONvEe2us8PdE3qpIw">
+        <name xsi:nil="true"/>
+      </message>
+      <message xmi:id="_pnFuCuNvEe2us8PdE3qpIw" name="ID not 0" receiveEvent="_pnFuDONvEe2us8PdE3qpIw" sendEvent="_pnFuC-NvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnFuDeNvEe2us8PdE3qpIw" name="return false" receiveEvent="_pnFuD-NvEe2us8PdE3qpIw" sendEvent="_pnFuDuNvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnFuEONvEe2us8PdE3qpIw" receiveEvent="_pnFuEeNvEe2us8PdE3qpIw" sendEvent="_pnFuEuNvEe2us8PdE3qpIw">
+        <name xsi:nil="true"/>
+      </message>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_pnFuE-NvEe2us8PdE3qpIw" name="SaveIssue">
+      <lifeline xmi:id="_pnFuFONvEe2us8PdE3qpIw" name="Input" coveredBy="_pnFuH-NvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pnFuFeNvEe2us8PdE3qpIw" name="NoProject" coveredBy="_pnO38ONvEe2us8PdE3qpIw _pnO38uNvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pnFuFuNvEe2us8PdE3qpIw" name="NoVersion" coveredBy="_pnO38-NvEe2us8PdE3qpIw _pnO39eNvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pnFuF-NvEe2us8PdE3qpIw" name="NoDeveloper" coveredBy="_pnO39uNvEe2us8PdE3qpIw _pnO3-ONvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pnFuGONvEe2us8PdE3qpIw" name="Return" coveredBy="_pnO4CuNvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pnFuGeNvEe2us8PdE3qpIw" name="NoState" coveredBy="_pnO3-eNvEe2us8PdE3qpIw _pnO3--NvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pnFuGuNvEe2us8PdE3qpIw" name="" coveredBy="_pnO3_ONvEe2us8PdE3qpIw _pnO3_uNvEe2us8PdE3qpIw _pnO4AeNvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pnFuG-NvEe2us8PdE3qpIw" name="Update-State" coveredBy="_pnO3_-NvEe2us8PdE3qpIw _pnO4BONvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pnFuHONvEe2us8PdE3qpIw" name="Insert-State" coveredBy="_pnO4AuNvEe2us8PdE3qpIw _pnO4B-NvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pnFuHeNvEe2us8PdE3qpIw" name="NotSaved" coveredBy="_pnO4BeNvEe2us8PdE3qpIw _pnO4CONvEe2us8PdE3qpIw _pnO4C-NvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnFuH-NvEe2us8PdE3qpIw" covered="_pnFuFONvEe2us8PdE3qpIw" message="_pnFuHuNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO38ONvEe2us8PdE3qpIw" covered="_pnFuFeNvEe2us8PdE3qpIw" message="_pnFuHuNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO38uNvEe2us8PdE3qpIw" covered="_pnFuFeNvEe2us8PdE3qpIw" message="_pnO38eNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO38-NvEe2us8PdE3qpIw" covered="_pnFuFuNvEe2us8PdE3qpIw" message="_pnO38eNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO39eNvEe2us8PdE3qpIw" covered="_pnFuFuNvEe2us8PdE3qpIw" message="_pnO39ONvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO39uNvEe2us8PdE3qpIw" covered="_pnFuF-NvEe2us8PdE3qpIw" message="_pnO39ONvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO3-ONvEe2us8PdE3qpIw" covered="_pnFuF-NvEe2us8PdE3qpIw" message="_pnO39-NvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO3-eNvEe2us8PdE3qpIw" covered="_pnFuGeNvEe2us8PdE3qpIw" message="_pnO39-NvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO3--NvEe2us8PdE3qpIw" covered="_pnFuGeNvEe2us8PdE3qpIw" message="_pnO3-uNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO3_ONvEe2us8PdE3qpIw" covered="_pnFuGuNvEe2us8PdE3qpIw" message="_pnO3-uNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO3_uNvEe2us8PdE3qpIw" covered="_pnFuGuNvEe2us8PdE3qpIw" message="_pnO3_eNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO3_-NvEe2us8PdE3qpIw" covered="_pnFuG-NvEe2us8PdE3qpIw" message="_pnO3_eNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO4AeNvEe2us8PdE3qpIw" covered="_pnFuGuNvEe2us8PdE3qpIw" message="_pnO4AONvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO4AuNvEe2us8PdE3qpIw" covered="_pnFuHONvEe2us8PdE3qpIw" message="_pnO4AONvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO4BONvEe2us8PdE3qpIw" covered="_pnFuG-NvEe2us8PdE3qpIw" message="_pnO4A-NvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO4BeNvEe2us8PdE3qpIw" covered="_pnFuHeNvEe2us8PdE3qpIw" message="_pnO4A-NvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO4B-NvEe2us8PdE3qpIw" covered="_pnFuHONvEe2us8PdE3qpIw" message="_pnO4BuNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO4CONvEe2us8PdE3qpIw" covered="_pnFuHeNvEe2us8PdE3qpIw" message="_pnO4BuNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO4CuNvEe2us8PdE3qpIw" covered="_pnFuGONvEe2us8PdE3qpIw" message="_pnO4CeNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnO4C-NvEe2us8PdE3qpIw" covered="_pnFuHeNvEe2us8PdE3qpIw" message="_pnO4CeNvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnFuHuNvEe2us8PdE3qpIw" receiveEvent="_pnO38ONvEe2us8PdE3qpIw" sendEvent="_pnFuH-NvEe2us8PdE3qpIw">
+        <name xsi:nil="true"/>
+      </message>
+      <message xmi:id="_pnO38eNvEe2us8PdE3qpIw" name="Set Project" receiveEvent="_pnO38-NvEe2us8PdE3qpIw" sendEvent="_pnO38uNvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnO39ONvEe2us8PdE3qpIw" name="Set Version" receiveEvent="_pnO39uNvEe2us8PdE3qpIw" sendEvent="_pnO39eNvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnO39-NvEe2us8PdE3qpIw" name="Set Developer" receiveEvent="_pnO3-eNvEe2us8PdE3qpIw" sendEvent="_pnO3-ONvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnO3-uNvEe2us8PdE3qpIw" name="Issue Exists" receiveEvent="_pnO3_ONvEe2us8PdE3qpIw" sendEvent="_pnO3--NvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnO3_eNvEe2us8PdE3qpIw" receiveEvent="_pnO3_-NvEe2us8PdE3qpIw" sendEvent="_pnO3_uNvEe2us8PdE3qpIw">
+        <name xsi:nil="true"/>
+      </message>
+      <message xmi:id="_pnO4AONvEe2us8PdE3qpIw" receiveEvent="_pnO4AuNvEe2us8PdE3qpIw" sendEvent="_pnO4AeNvEe2us8PdE3qpIw">
+        <name xsi:nil="true"/>
+      </message>
+      <message xmi:id="_pnO4A-NvEe2us8PdE3qpIw" name="Update State" receiveEvent="_pnO4BeNvEe2us8PdE3qpIw" sendEvent="_pnO4BONvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnO4BuNvEe2us8PdE3qpIw" name="New State" receiveEvent="_pnO4CONvEe2us8PdE3qpIw" sendEvent="_pnO4B-NvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnO4CeNvEe2us8PdE3qpIw" name="Save Issue" receiveEvent="_pnO4CuNvEe2us8PdE3qpIw" sendEvent="_pnO4C-NvEe2us8PdE3qpIw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_pnYo8ONvEe2us8PdE3qpIw" name="Save">
+      <lifeline xmi:id="_pnYo8eNvEe2us8PdE3qpIw" name="Start" coveredBy="_pnYo9uNvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pnYo8uNvEe2us8PdE3qpIw" name="Init" coveredBy="_pnYo9-NvEe2us8PdE3qpIw _pnYo-eNvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pnYo8-NvEe2us8PdE3qpIw" name="Return" coveredBy="_pnYo_ONvEe2us8PdE3qpIw"/>
+      <lifeline xmi:id="_pnYo9ONvEe2us8PdE3qpIw" name="Persisted" coveredBy="_pnYo-uNvEe2us8PdE3qpIw _pnYo_eNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnYo9uNvEe2us8PdE3qpIw" covered="_pnYo8eNvEe2us8PdE3qpIw" message="_pnYo9eNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnYo9-NvEe2us8PdE3qpIw" covered="_pnYo8uNvEe2us8PdE3qpIw" message="_pnYo9eNvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnYo-eNvEe2us8PdE3qpIw" covered="_pnYo8uNvEe2us8PdE3qpIw" message="_pnYo-ONvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnYo-uNvEe2us8PdE3qpIw" covered="_pnYo9ONvEe2us8PdE3qpIw" message="_pnYo-ONvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnYo_ONvEe2us8PdE3qpIw" covered="_pnYo8-NvEe2us8PdE3qpIw" message="_pnYo--NvEe2us8PdE3qpIw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnYo_eNvEe2us8PdE3qpIw" covered="_pnYo9ONvEe2us8PdE3qpIw" message="_pnYo--NvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnYo9eNvEe2us8PdE3qpIw" name="Init Hibernate" receiveEvent="_pnYo9-NvEe2us8PdE3qpIw" sendEvent="_pnYo9uNvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnYo-ONvEe2us8PdE3qpIw" name="Persist Data" receiveEvent="_pnYo-uNvEe2us8PdE3qpIw" sendEvent="_pnYo-eNvEe2us8PdE3qpIw"/>
+      <message xmi:id="_pnYo--NvEe2us8PdE3qpIw" name="Commit" receiveEvent="_pnYo_ONvEe2us8PdE3qpIw" sendEvent="_pnYo_eNvEe2us8PdE3qpIw"/>
+    </packagedElement>
+  </uml:Model>
+  <uml:Model xmi:id="_pm79AeNvEe2us8PdE3qpIw" name="Sequence-Diagrams"/>
+  <uml:Model xmi:id="_pm79AuNvEe2us8PdE3qpIw" name="Sequence-Diagrams"/>
+  <uml:Model xmi:id="_pm79A-NvEe2us8PdE3qpIw" name="Sequence-Diagrams"/>
+  <uml:Model xmi:id="_pm79BONvEe2us8PdE3qpIw" name="Sequence-Diagrams"/>
+  <uml:Model xmi:id="_pm79BeNvEe2us8PdE3qpIw" name="Sequence-Diagrams"/>
+</xmi:XMI>

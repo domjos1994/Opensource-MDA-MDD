@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 
 @MappedSuperclass
-protected class BaseObject implements Serializable  {
+public class BaseObject implements Serializable  {
 	@Column(name="ID")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

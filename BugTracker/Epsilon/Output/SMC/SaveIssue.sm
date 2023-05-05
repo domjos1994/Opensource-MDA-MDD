@@ -1,0 +1,39 @@
+%class SaveIssue
+%package SaveIssue
+
+%start Main::NoProject
+
+%map Main
+
+%%
+NoProject
+{
+			NoProject	{}
+}
+NoVersion
+{
+			NoProject	{}
+}
+NoDeveloper
+{
+			NoProject	{}
+}
+NoState
+{
+			NoProject	{}
+}
+Update-State
+{
+			NoProject	{}
+}
+Insert-State
+{
+			NoProject	{}
+}
+NotSaved
+{
+			NoProject	{}
+}
+%%
+
+

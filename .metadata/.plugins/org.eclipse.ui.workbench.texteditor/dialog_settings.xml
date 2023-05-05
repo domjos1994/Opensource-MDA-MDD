@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="_J9CCYNkvEe2F49EgGcOaxg"/>
+		<item key="selection" value="Issue"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="Issue"/>
+			<item value="issue"/>
+			<item value="SMCBugTracker"/>
+			<item value="buildParameter"/>
+			<item value="Model"/>
+			<item value="subvertex"/>
+			<item value="State"/>
 			<item value="_J9CCYNkvEe2F49EgGcOaxg"/>
 			<item value="_tbxfUMk-Ee2LjtXVys48lg"/>
 			<item value="_J9A0QdkvEe2F49EgGcOaxg"/>
@@ -16,13 +23,6 @@
 			<item value="_DIHr8N4EEe2b-cW_QU3v2g"/>
 			<item value="choice"/>
 			<item value="PrimaryKeyJoin"/>
-			<item value="generated"/>
-			<item value="auto"/>
-			<item value="&quot;ID&quot;"/>
-			<item value="ID"/>
-			<item value="MappedSuper"/>
-			<item value="BugTracker"/>
-			<item value="type.name"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>

@@ -1,0 +1,26 @@
+rule CreateGetterAndSetter
+    transform oldClass : Source!Class 
+    to newClass : Target!Class {
+    
+    
+    // Go through attributes
+   	for(attribute in oldClass.ownedAttribute) {
+   		var firstUpperCase = attribute.name.substring(0,1).toUpperCase() + attribute.name.substring(1);
+   	
+   		var setterOperation = new Target!Operation();
+   		setterOperation.name = "set" + firstUpperCase;
+   		
+   		var ownedParameter = new Target!Parameter();
+   		ownedParameter.name = attribute.name;
+   		setterOperation.ownedParameter.add(ownedParameter);
+   		
+   		newClass.ownedOperation.add(setterOperation);
+   		
+   		var getterOperation = new Target!Operation();
+   		getterOperation.name = "get" + firstUpperCase;
+   		
+   		newClass.ownedOperation.add(getterOperation);
+   		
+   		//newClass.ownedAttribute.add(attribute);
+   	}
+}

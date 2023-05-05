@@ -19,6 +19,22 @@ public class Project extends TitledObject implements Serializable  {
 
 
 
+	public Project() {
+		
+		this.state = null;
+		this.released = null;
+		this.updated = null;
+	}
+
+	public Project(String state, java.util.Date released, java.util.Date updated) {
+		if(released != null && updated != null && state != null){
+			return;
+		}
+		this.state = state;
+		this.released= released;
+		this.updated = updated;
+	}
+
 	public void setState(String state) {
 		this.state=state;
 	}
@@ -41,22 +57,6 @@ public class Project extends TitledObject implements Serializable  {
 
 	public java.util.Date getUpdated() {
 		return this.updated;
-	}
-
-	public Project() {
-		
-		this.state = null;
-		this.released = null;
-		this.updated = null;
-	}
-
-	public Project(String state, java.util.Date released, java.util.Date updated) {
-		if(released != null && updated != null && state != null){
-			return;
-		}
-		this.state = state;
-		this.released= released;
-		this.updated = updated;
 	}
 
 

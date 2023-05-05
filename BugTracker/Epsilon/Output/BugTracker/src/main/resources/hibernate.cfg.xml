@@ -18,14 +18,14 @@
 
 
 		<mapping class='BugTracker.BugTracker'/>
-		<mapping class='BugTracker.Base.BaseObject'/>
-		<mapping class='BugTracker.Base.Category'/>
-		<mapping class='BugTracker.Base.Tag'/>
-		<mapping class='BugTracker.Base.TitledObject'/>
-		<mapping class='BugTracker.Base.User'/>
-		<mapping class='BugTracker.Issue.Issue'/>
 		<mapping class='BugTracker.Project.Version'/>
 		<mapping class='BugTracker.Project.Project'/>
+		<mapping class='BugTracker.Issue.Issue'/>
+		<mapping class='BugTracker.Base.TitledObject'/>
+		<mapping class='BugTracker.Base.Tag'/>
+		<mapping class='BugTracker.Base.BaseObject'/>
+		<mapping class='BugTracker.Base.Category'/>
+		<mapping class='BugTracker.Base.User'/>
 
 	</session-factory>
 </hibernate-configuration>

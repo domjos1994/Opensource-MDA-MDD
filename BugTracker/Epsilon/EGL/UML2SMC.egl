@@ -1,0 +1,151 @@
+[%=m.buildStateMachine()%]
+
+[% 
+operation StateMachine buildStateMachine(): String {
+	var content = self.buildGeneral();
+	var lst = new List<String>();
+	
+	for(transition in self.region.transition) {
+		for(source in transition.source) {
+			if(source.isTypeOf(State)) {
+				for(trans in transition) {
+					if(trans.isTypeOf(Transition)) {
+						if(not lst.contains(source.name)) {
+							if(source.isTypeOf(State)) {
+								lst.add(source.name);
+								content += source.buildState(trans);
+							} else if(sourc.isTypeOf(Pseudostate)) {
+								lst.add(source.name);
+								content += source.buildState(trans);
+							}
+						}
+					}
+				}
+			}
+		}
+		for(target in transition.target) {
+			if(target.isTypeOf(State)) {
+				if(not lst.contains(target.name)) {
+					if(target.isTypeOf(State)) {
+						lst.add(target.name);
+						content += target.buildState(null);
+					} else if(target.isTypeOf(Pseudostate)) {
+						lst.add(target.name);
+						content += target.buildState(null);
+					}
+				}
+			}
+		}
+	}
+	content += "%%\n";
+	return content;
+}
+
+operation State buildState(transition: Transition): String {
+	var content = self.name + "\n";	
+	if(self.entry != null and self.entry.isTypeOf(OpaqueBehavior)) {
+		content += self.entry.buildEntryOrExit("Entry") + "\n";
+	}
+	if(self.exit != null and self.exit.isTypeOf(OpaqueBehavior)) {
+		content += self.exit.buildEntryOrExit("Exit") + "\n";
+	}
+	content += "{\n";
+	if(self.doActivity != null and self.doActivity.isTypeOf(OpaqueBehavior)) {
+		content += self.doActivity.buildExternalLoopback() + "\n";
+	}
+	if(transition != null) {
+		content += transition.buildTransition();
+	}
+	content += "}\n";
+	return content;
+}
+
+operation Pseudostate buildState(transition: Transition): String {
+	var content = self.name + "\n";	
+	if(self.entry != null and self.entry.isTypeOf(OpaqueBehavior)) {
+		content += self.entry.buildEntryOrExit("Entry") + "\n";
+	}
+	if(self.exit != null and self.exit.isTypeOf(OpaqueBehavior)) {
+		content += self.exit.buildEntryOrExit("Exit") + "\n";
+	}
+	content += "{\n";
+	if(self.doActivity != null and self.doActivity.isTypeOf(OpaqueBehavior)) {
+		content += self.doActivity.buildExternalLoopback() + "\n";
+	}
+	if(transition != null) {
+		content += transition.buildTransition();
+	}
+	content += "}\n";
+	return content;
+}
+
+operation OpaqueBehavior buildExternalLoopback(): String {
+	var name = self.name;
+	return "\t" + name + "\tnil\t\t{" + self.body.buildBody() + "}";
+}
+operation OpaqueBehavior buildEntryOrExit(name: String): String {
+	return name + " {" + self.body.buildBody() + "}";
+}
+
+operation Transition buildTransition(): String {	
+	var content = "";
+	var body = "";
+	if(self.effect != null) {
+		body = self.effect.body.buildBody();
+	}
+	
+	var guard = "";
+	if(self.ownedRule != null) {
+		for(rule in self.ownedRule) {
+			var specification = rule.specification;
+			if(specification.isTypeOf(LiteralBoolean)) {
+				var name = specification.name;
+				var value = specification.value.toString();
+				guard = "[" + name + "==" + value +"]";
+			}
+		}
+	}
+	
+	for(target in self.target) {
+		content += "\t" + self.name + "\t" + guard + "\t" + target.name + "\t{" + body + "}\n";
+	}
+	return content;
+}
+
+operation Sequence<String> buildBody(): String {
+	var strBody = "";
+	for(body in self) {
+		for(line in body.split("\n")) {
+			if(line.endsWith(";")) {
+				strBody += line + " ";
+			} else {
+				strBody += line + "; ";
+			}
+		}
+	}
+	return strBody;
+}
+
+operation StateMachine buildGeneral(): String {
+	var content = "";
+	content += "%class " + self.name + "\n";
+	content += "%package " + self.name + "\n";
+	
+	var name = self.getStartState();
+	content += "\n" + "%start Main::" + name + "\n\n";
+	content += "%map Main\n\n%%\n";
+	return content;
+}
+
+operation StateMachine getStartState(): String {
+	for(transitions in self.region.transition) {
+		for(transition in transitions) {
+			var source = transition.source;
+			if(source.isTypeOf(Pseudostate) and source.kind.toString()="initial") {
+				return transition.target.name;
+			}
+		}
+	}
+	return "";
+}
+%]

@@ -1,0 +1,19 @@
+%class Save
+%package Save
+
+%start Main::Init
+
+%map Main
+
+%%
+Init
+{
+	Init Hibernate		Init	{SessionFactory sessionFactory = new Configuration().; 	configure().buildSessionFactory();; Session session = sessionFactory.getCurrentSession();; Transaction transaction = session.beginTransaction(); }
+}
+Persisted
+{
+	Init Hibernate		Init	{SessionFactory sessionFactory = new Configuration().; 	configure().buildSessionFactory();; Session session = sessionFactory.getCurrentSession();; Transaction transaction = session.beginTransaction(); }
+}
+%%
+
+

@@ -1,0 +1,5 @@
+rule UML2SMC transform m: StateMachine {
+
+	template: "UML2SMC.egl"
+	target: "../Output/SMC/" + m.name + ".sm"
+}

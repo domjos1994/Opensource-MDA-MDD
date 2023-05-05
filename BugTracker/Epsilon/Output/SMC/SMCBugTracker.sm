@@ -1,0 +1,21 @@
+%class SMCBugTracker
+%package SMCBugTracker
+
+%start Main::State1
+
+%map Main
+
+%%
+State1
+Entry {startTimer(); }
+Exit {endTimer(); }
+{
+	updateProgress()	nil		{updateProgress(); }
+	onFinish	[state==false]	State2	{test(); }
+}
+State2
+{
+}
+%%
+
+

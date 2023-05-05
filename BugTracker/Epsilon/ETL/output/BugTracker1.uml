@@ -1,0 +1,120 @@
+ich <?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Class xmi:id="_ZZhoMOnbEe2FqL2UupTuDw">
+    <ownedOperation xmi:id="_ZZi2UOnbEe2FqL2UupTuDw" name="setTitle">
+      <ownedParameter xmi:id="_ZZi2UenbEe2FqL2UupTuDw" name="Title"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZi2UunbEe2FqL2UupTuDw" name="getTitle"/>
+    <ownedOperation xmi:id="_ZZi2U-nbEe2FqL2UupTuDw" name="setDescription">
+      <ownedParameter xmi:id="_ZZi2VOnbEe2FqL2UupTuDw" name="Description"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZi2VenbEe2FqL2UupTuDw" name="getDescription"/>
+    <ownedOperation xmi:id="_ZZi2VunbEe2FqL2UupTuDw" name="setVersion">
+      <ownedParameter xmi:id="_ZZi2V-nbEe2FqL2UupTuDw" name="version"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZi2WOnbEe2FqL2UupTuDw" name="getVersion"/>
+    <ownedOperation xmi:id="_ZZjdYOnbEe2FqL2UupTuDw" name="setState">
+      <ownedParameter xmi:id="_ZZjdYenbEe2FqL2UupTuDw" name="state"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZjdYunbEe2FqL2UupTuDw" name="getState"/>
+  </uml:Class>
+  <uml:Class xmi:id="_ZZhoMenbEe2FqL2UupTuDw">
+    <ownedOperation xmi:id="_ZZjdY-nbEe2FqL2UupTuDw" name="setTitle">
+      <ownedParameter xmi:id="_ZZjdZOnbEe2FqL2UupTuDw" name="Title"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZkEcOnbEe2FqL2UupTuDw" name="getTitle"/>
+    <ownedOperation xmi:id="_ZZkEcenbEe2FqL2UupTuDw" name="setDescription">
+      <ownedParameter xmi:id="_ZZkEcunbEe2FqL2UupTuDw" name="Description"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZkEc-nbEe2FqL2UupTuDw" name="getDescription"/>
+    <ownedOperation xmi:id="_ZZlSkOnbEe2FqL2UupTuDw" name="setReleased">
+      <ownedParameter xmi:id="_ZZlSkenbEe2FqL2UupTuDw" name="released"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZlSkunbEe2FqL2UupTuDw" name="getReleased"/>
+    <ownedOperation xmi:id="_ZZlSk-nbEe2FqL2UupTuDw" name="setUpdated">
+      <ownedParameter xmi:id="_ZZlSlOnbEe2FqL2UupTuDw" name="updated"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZlSlenbEe2FqL2UupTuDw" name="getUpdated"/>
+  </uml:Class>
+  <uml:Class xmi:id="_ZZhoMunbEe2FqL2UupTuDw">
+    <ownedOperation xmi:id="_ZZl5oOnbEe2FqL2UupTuDw" name="setTitle">
+      <ownedParameter xmi:id="_ZZl5oenbEe2FqL2UupTuDw" name="Title"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZl5ounbEe2FqL2UupTuDw" name="getTitle"/>
+    <ownedOperation xmi:id="_ZZl5o-nbEe2FqL2UupTuDw" name="setDescription">
+      <ownedParameter xmi:id="_ZZl5pOnbEe2FqL2UupTuDw" name="Description"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZmgsOnbEe2FqL2UupTuDw" name="getDescription"/>
+    <ownedOperation xmi:id="_ZZnHwOnbEe2FqL2UupTuDw" name="setSummary">
+      <ownedParameter xmi:id="_ZZnu0OnbEe2FqL2UupTuDw" name="Summary"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZnu0enbEe2FqL2UupTuDw" name="getSummary"/>
+    <ownedOperation xmi:id="_ZZnu0unbEe2FqL2UupTuDw" name="setProject">
+      <ownedParameter xmi:id="_ZZnu0-nbEe2FqL2UupTuDw" name="project"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZnu1OnbEe2FqL2UupTuDw" name="getProject"/>
+    <ownedOperation xmi:id="_ZZoV4OnbEe2FqL2UupTuDw" name="setTag">
+      <ownedParameter xmi:id="_ZZoV4enbEe2FqL2UupTuDw" name="tag"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZoV4unbEe2FqL2UupTuDw" name="getTag"/>
+    <ownedOperation xmi:id="_ZZo88OnbEe2FqL2UupTuDw" name="setCategory">
+      <ownedParameter xmi:id="_ZZo88enbEe2FqL2UupTuDw" name="category"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZo88unbEe2FqL2UupTuDw" name="getCategory"/>
+    <ownedOperation xmi:id="_ZZo88-nbEe2FqL2UupTuDw" name="setUser">
+      <ownedParameter xmi:id="_ZZo89OnbEe2FqL2UupTuDw" name="user"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZo89enbEe2FqL2UupTuDw" name="getUser"/>
+    <ownedOperation xmi:id="_ZZpkAOnbEe2FqL2UupTuDw" name="setVersion">
+      <ownedParameter xmi:id="_ZZpkAenbEe2FqL2UupTuDw" name="version"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZpkAunbEe2FqL2UupTuDw" name="getVersion"/>
+  </uml:Class>
+  <uml:Class xmi:id="_ZZhoM-nbEe2FqL2UupTuDw">
+    <ownedOperation xmi:id="_ZZpkA-nbEe2FqL2UupTuDw" name="setTitle">
+      <ownedParameter xmi:id="_ZZqLEOnbEe2FqL2UupTuDw" name="Title"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZqLEenbEe2FqL2UupTuDw" name="getTitle"/>
+    <ownedOperation xmi:id="_ZZqyIOnbEe2FqL2UupTuDw" name="setDescription">
+      <ownedParameter xmi:id="_ZZqyIenbEe2FqL2UupTuDw" name="Description"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZqyIunbEe2FqL2UupTuDw" name="getDescription"/>
+  </uml:Class>
+  <uml:Class xmi:id="_ZZhoNOnbEe2FqL2UupTuDw">
+    <ownedOperation xmi:id="_ZZqyI-nbEe2FqL2UupTuDw" name="setTitle">
+      <ownedParameter xmi:id="_ZZqyJOnbEe2FqL2UupTuDw" name="Title"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZrZMOnbEe2FqL2UupTuDw" name="getTitle"/>
+    <ownedOperation xmi:id="_ZZrZMenbEe2FqL2UupTuDw" name="setDescription">
+      <ownedParameter xmi:id="_ZZrZMunbEe2FqL2UupTuDw" name="Description"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZrZM-nbEe2FqL2UupTuDw" name="getDescription"/>
+  </uml:Class>
+  <uml:Class xmi:id="_ZZhoNenbEe2FqL2UupTuDw">
+    <ownedOperation xmi:id="_ZZsAQOnbEe2FqL2UupTuDw" name="setUserName">
+      <ownedParameter xmi:id="_ZZsAQenbEe2FqL2UupTuDw" name="UserName"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZsnUOnbEe2FqL2UupTuDw" name="getUserName"/>
+    <ownedOperation xmi:id="_ZZwRsOnbEe2FqL2UupTuDw" name="setFirstName">
+      <ownedParameter xmi:id="_ZZwRsenbEe2FqL2UupTuDw" name="FirstName"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZw4wOnbEe2FqL2UupTuDw" name="getFirstName"/>
+    <ownedOperation xmi:id="_ZZxf0OnbEe2FqL2UupTuDw" name="setLastName">
+      <ownedParameter xmi:id="_ZZxf0enbEe2FqL2UupTuDw" name="LastName"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZyG4OnbEe2FqL2UupTuDw" name="getLastName"/>
+    <ownedOperation xmi:id="_ZZyG4enbEe2FqL2UupTuDw" name="setPassword">
+      <ownedParameter xmi:id="_ZZyG4unbEe2FqL2UupTuDw" name="Password"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZyG4-nbEe2FqL2UupTuDw" name="getPassword"/>
+    <ownedOperation xmi:id="_ZZyt8OnbEe2FqL2UupTuDw" name="setProject">
+      <ownedParameter xmi:id="_ZZyt8enbEe2FqL2UupTuDw" name="project"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ZZyt8unbEe2FqL2UupTuDw" name="getProject"/>
+  </uml:Class>
+  <uml:Class xmi:id="_ZZhoNunbEe2FqL2UupTuDw"/>
+  <uml:Class xmi:id="_ZZhoN-nbEe2FqL2UupTuDw"/>
+  <uml:Class xmi:id="_ZZhoOOnbEe2FqL2UupTuDw"/>
+  <uml:Class xmi:id="_ZZhoOenbEe2FqL2UupTuDw"/>
+  <uml:Class xmi:id="_ZZhoOunbEe2FqL2UupTuDw"/>
+</xmi:XMI>

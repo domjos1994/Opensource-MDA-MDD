@@ -1,0 +1,59 @@
+rule StateMachine2SequenceDiagram 
+	transform source: Source!Model
+	to target: Target!Model {
+	
+	target.name = "Sequence-Diagrams";
+	
+	// select all stateMachines
+	for(stateMachine in source.packagedElement.select(sm|sm.isTypeOf(Source!StateMachine))) {
+		var sequenceDiagram = new Target!Interaction();
+		
+		// set properties
+		sequenceDiagram.name = stateMachine.name;
+		
+		// add to model
+		target.packagedElement.add(sequenceDiagram);
+		
+		// load states
+		for(states in stateMachine.region.subvertex) {
+			for(state in states) {
+				var lifeline = new Target!Lifeline();
+				lifeline.name = state.name;
+				sequenceDiagram.lifeline.add(lifeline);
+			}
+		}
+		
+		// load transitions
+		for(transitions in stateMachine.region.transition) {
+			for(transition in transitions) {
+			
+				// convert transition to message
+				var msg = new Target!Message();
+				msg.name = transition.name;
+				sequenceDiagram.message.add(msg);
+				
+				for(lifeline in sequenceDiagram.lifeline) {
+					
+					if(transition.source.name=lifeline.name) {
+						var fragment = new Target!MessageOccurrenceSpecification();
+						fragment.message = msg;
+						fragment.covered.add(lifeline);
+						
+						sequenceDiagram.fragment.add(fragment);
+						msg.sendEvent = fragment;
+					}
+					
+					if(transition.target.name=lifeline.name) {
+						var fragment = new Target!MessageOccurrenceSpecification();
+						fragment.message = msg;
+						fragment.covered.add(lifeline);
+						
+						sequenceDiagram.fragment.add(fragment);
+						msg.receiveEvent = fragment;
+					}
+				}
+			}
+		}
+	
+	}
+}

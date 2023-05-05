@@ -1,0 +1,7 @@
+rule ClassDiagram2SQL transform m: Model {
+
+	guard: m.name=="BugTracker"
+
+	template: "ClassDiagram2SQL.egl"
+	target: "../Output/SQL/BugTracker.sql"
+}

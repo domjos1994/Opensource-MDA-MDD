@@ -1,0 +1,27 @@
+%class IssueExists
+%package IssueExists
+
+%start Main::S2
+
+%map Main
+
+%%
+S2
+{
+			S2	{}
+}
+Is Not Null
+{
+			S2	{}
+}
+Null
+{
+			S2	{}
+}
+Return
+{
+			S2	{}
+}
+%%
+
+

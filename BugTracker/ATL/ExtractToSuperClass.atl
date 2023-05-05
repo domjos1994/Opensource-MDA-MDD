@@ -1,0 +1,14 @@
+-- @nsURI UML=http://www.eclipse.org/uml2/5.0.0/UML
+-- @nsURI UML2=http://www.eclipse.org/uml2/5.0.0/UML
+
+module Families2Persons;
+create OUT:XSD from IN:UML;
+
+rule  {
+	from
+		s:UML!Class
+	to
+		t:XSD!Class (
+			name <- s.name
+		)
+}
