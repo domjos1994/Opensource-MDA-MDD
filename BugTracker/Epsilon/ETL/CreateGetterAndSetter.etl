@@ -1,26 +1,52 @@
+import "Helper.etl";
+
 rule CreateGetterAndSetter
-    transform oldClass : Source!Class 
-    to newClass : Target!Class {
+    transform oldModel : Source!Model 
+    to newModel : Target!Model {
+    guard: oldModel.name.startsWith("BugTracker")
     
+    oldModel.addClasses(newModel);
+    oldModel.addAssociations(newModel);
     
     // Go through attributes
-   	for(attribute in oldClass.ownedAttribute) {
-   		var firstUpperCase = attribute.name.substring(0,1).toUpperCase() + attribute.name.substring(1);
-   	
-   		var setterOperation = new Target!Operation();
-   		setterOperation.name = "set" + firstUpperCase;
+   	for(newClass in newModel.packagedElement.select(cls|cls.isTypeOf(Target!Class))) {
    		
-   		var ownedParameter = new Target!Parameter();
-   		ownedParameter.name = attribute.name;
-   		setterOperation.ownedParameter.add(ownedParameter);
-   		
-   		newClass.ownedOperation.add(setterOperation);
-   		
-   		var getterOperation = new Target!Operation();
-   		getterOperation.name = "get" + firstUpperCase;
-   		
-   		newClass.ownedOperation.add(getterOperation);
-   		
-   		//newClass.ownedAttribute.add(attribute);
+   		// Go through attributes
+	   	for(attribute in newClass.ownedAttribute) {
+	   		attribute.visibility = Target!VisibilityKind#private;
+	   	
+	   		// rename bug to Bug
+	   		var firstUpperCase = attribute.name.substring(0,1).toUpperCase() + attribute.name.substring(1);
+	   	
+	   		// create setter
+	   		var setterOperation = new Target!Operation();
+	   		setterOperation.name = "set" + firstUpperCase;
+	   		
+	   		// create parameter
+	   		var ownedParameter = new Target!Parameter();
+	   		ownedParameter.name = attribute.name;
+	   		ownedParameter.visibility = Target!VisibilityKind#public;
+	   		ownedParameter.type = attribute.type;
+	   		setterOperation.ownedParameter.add(ownedParameter);
+	   		
+	   		// add to class
+	   		newClass.ownedOperation.add(setterOperation);
+	   		
+	   		// create getter
+	   		var getterOperation = new Target!Operation();
+	   		getterOperation.name = "get" + firstUpperCase;
+	   		
+	   		// create return parameter
+	   		var ownedParameter = new Target!Parameter();
+	   		ownedParameter.name = attribute.name;
+	   		ownedParameter.visibility = Target!VisibilityKind#public;
+	   		ownedParameter.direction = Target!ParameterDirectionKind#`return`;
+	   		ownedParameter.type = attribute.type;
+	   		getterOperation.ownedParameter.add(ownedParameter);
+	   		
+	   		
+	   		// add to class
+	   		newClass.ownedOperation.add(getterOperation);
+	   	}
    	}
 }
