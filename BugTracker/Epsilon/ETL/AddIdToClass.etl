@@ -1,0 +1,21 @@
+import "Helper.etl";
+
+rule AddIdToClass
+    transform oldModel : Source!Model 
+    to newModel : Target!Model {
+    guard: oldModel.name.startsWith("BugTracker")
+    
+    oldModel.addClasses(newModel);
+    oldModel.addAssociations(newModel);
+    
+    for(newClass in newModel.packagedElement.select(cls|cls.isTypeOf(Target!Class))) {
+    	
+    	var property = new Target!Property(`Integer`);
+    	property.name = "id";
+    	property.visibility = Target!VisibilityKind#public;
+    	property.type = Source!DataType.all.selectOne(pt|pt.name == "Integer");
+    	newClass.ownedAttribute.add(property);
+    }
+}
+
+

@@ -1,0 +1,94 @@
+import "Helper.etl";
+
+rule AddBugTracker
+    transform oldModel : Source!Model
+    to 	newModel : Target!Model {
+    guard: oldModel.name.startsWith("BugTracker")
+    
+    oldModel.addClasses(newModel);
+    oldModel.addAssociations(newModel);
+    
+    
+    var cls = new Target!Class();
+    cls.name = "BugTracker";
+    newModel.packagedElement.add(cls);
+    
+    cls.ownedAttribute.add(createProperty(newModel, "Project"));
+    cls.ownedAttribute.add(createProperty(newModel, "Version"));
+    cls.ownedAttribute.add(createProperty(newModel, "Issue"));
+    
+    var params = new Map<String, Target!Class>();
+    params.put("issue", getClassByName(newModel, "Issue"));
+    cls.ownedOperation.add(createOperation("issueExists", params, Source!DataType.all.selectOne(pt|pt.name="Boolean")));
+    
+    params.clear();
+    cls.ownedOperation.add(createOperation("save", params, null));
+    
+    params.clear();
+    params.put("version", getClassByName(newModel, "Version"));
+    params.put("project", getClassByName(newModel, "Project"));
+    params.put("issue", getClassByName(newModel, "Issue"));
+    params.put("developer", getClassByName(newModel, "User"));
+    cls.ownedOperation.add(createOperation("saveIssue", params, null));
+}
+
+operation createOperation(name: String, params: Map<String, Target!Class>, returnClass: Target!Class): Target!Operation {
+	var ownedOperation = new Target!Operation();
+	ownedOperation.name = name;
+	
+	for(key in params.keyset) {
+		var ownedParameter = new Target!Parameter();
+		ownedParameter.name = key;
+		ownedParameter.type = params.get(key);
+		ownedParameter.direction = Target!ParameterDirectionKind#`in`;
+		ownedOperation.ownedParameter.add(ownedParameter);
+	}
+	if(returnClass != null) {
+		var returnParameter = new Target!Parameter();
+		returnParameter.name = returnClass.name.toLowerCase();
+		returnParameter.type = returnClass;
+		returnParameter.direction = Target!ParameterDirectionKind#`return`;
+		ownedOperation.ownedParameter.add(returnParameter);		
+	}
+	
+	return ownedOperation;
+}
+
+operation createOperation(name: String, params: Map<String, Target!Class>, returnClass: Source!PrimitiveType): Target!Operation {
+	var ownedOperation = new Target!Operation();
+	ownedOperation.name = name;
+	
+	for(key in params.keyset) {
+		var ownedParameter = new Target!Parameter();
+		ownedParameter.name = key;
+		ownedParameter.type = params.get(key);
+		ownedParameter.direction = Target!ParameterDirectionKind#`in`;
+		ownedOperation.ownedParameter.add(ownedParameter);
+	}
+	if(returnClass != null) {
+		var returnParameter = new Target!Parameter();
+		returnParameter.name = returnClass.name.toLowerCase();
+		returnParameter.type = returnClass;
+		returnParameter.direction = Target!ParameterDirectionKind#`return`;
+		ownedOperation.ownedParameter.add(returnParameter);		
+	}
+	
+	return ownedOperation;
+}
+
+operation createProperty(newModel: Target!Model, name: String): Target!Property {
+	var property = new Target!Property();
+	property.name = name.toLowerCase();
+	property.type = getClassByName(newModel, name);
+	property.visibility = Target!VisibilityKind#private;
+	return property;
+}
+
+operation getClassByName(newModel: Target!Model, name: String): Target!Class {
+	for(cls in newModel.packagedElement.select(p|p.isTypeOf(Target!Class))) {
+		if(cls.name = name) {
+			return cls;
+		}
+	}
+	return null;
+}

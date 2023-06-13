@@ -1,0 +1,175 @@
+operation Source!Model addClasses(newModel: Target!Model) {
+	newModel.name = self.name;
+	
+	for(oldPackage in self.packagedElement.select(cls|cls.isTypeOf(Source!Package))) {
+		var newPackage = new Target!Package();
+		newPackage.name = oldPackage.name;
+		newModel.packagedElement.add(newPackage);
+		
+		// ToDo Type of new Model
+		for(oldClass in oldPackage.packagedElement.select(cls|cls.isTypeOf(Source!Class))) {
+	    
+	    	var newClass = new Target!Class();
+	    	// old class name to new class name
+		    newClass.name = oldClass.name;
+		    // the visibility
+		    newClass.visibility = self.visibility;
+		    
+		    // Go through attributes
+		   	for(attribute in oldClass.ownedAttribute) {
+		   		// create attribute
+		   		var newAttribute = new Target!Property();
+		   		newAttribute.name = attribute.name;
+		   		newAttribute.visibility = attribute.visibility;
+		   		newAttribute.type = attribute.type;
+		   		newClass.ownedAttribute.add(newAttribute);
+		   	}
+		   
+		   	for(ownedOperation in oldClass.ownedOperation) {
+		   		var newOperation = new Target!Operation();
+		   		newOperation.name = ownedOperation.name;
+		   		newOperation.visibility = ownedOperation.visibility;
+		   		
+		   		for(ownedParameter in ownedOperation.ownedParameter) {
+		   			var newParameter = new Target!Parameter();
+		   			newParameter.name = ownedParameter.name;
+		   			newParameter.type = ownedParameter.type;
+		   			newParameter.direction = ownedParameter.direction;
+		   			newOperation.ownedParameter.add(newParameter);
+		   		}
+		   		newClass.ownedOperation.add(newOperation);
+		   	}
+		   
+		   	for(generalization in oldClass.generalizations) {
+		   		var newGeneralization = new Target!Generalization();
+		   		newGeneralization.general = generalization.general;
+		   		newClass.generalizations.add(newGeneralization);
+		   	}
+		   	
+		   	newPackage.packagedElement.add(newClass);
+	    }
+	}
+	
+	// ToDo Type of new Model
+	for(oldClass in self.packagedElement.select(cls|cls.isTypeOf(Source!Class))) {
+    
+    	var newClass = new Target!Class();
+    	// old class name to new class name
+	    newClass.name = oldClass.name;
+	    // the visibility
+	    newClass.visibility = self.visibility;
+	    
+	    // Go through attributes
+	   	for(attribute in oldClass.ownedAttribute) {
+	   		// create attribute
+	   		var newAttribute = new Target!Property();
+	   		newAttribute.name = attribute.name;
+	   		newAttribute.visibility = attribute.visibility;
+	   		newAttribute.type = attribute.type;
+	   		newClass.ownedAttribute.add(newAttribute);
+	   	}
+	   
+	   	for(ownedOperation in oldClass.ownedOperation) {
+	   		var newOperation = new Target!Operation();
+	   		newOperation.name = ownedOperation.name;
+	   		newOperation.visibility = ownedOperation.visibility;
+	   		
+	   		for(ownedParameter in ownedOperation.ownedParameter) {
+	   			var newParameter = new Target!Parameter();
+	   			newParameter.name = ownedParameter.name;
+	   			newParameter.type = ownedParameter.type;
+	   			newParameter.direction = ownedParameter.direction;
+	   			newOperation.ownedParameter.add(newParameter);
+	   		}
+	   		newClass.ownedOperation.add(newOperation);
+	   	}
+	   
+	   	for(generalization in oldClass.generalizations) {
+	   		var newGeneralization = new Target!Generalization();
+	   		newGeneralization.general = generalization.general;
+	   		newClass.generalizations.add(newGeneralization);
+	   	}
+	   	
+	   	newModel.packagedElement.add(newClass);
+    }
+    
+    for(cls in newModel.packagedElement.select(p|p.isTypeOf(Target!Class))) {
+    	for(attr in cls.ownedAttribute.select(attr|attr.type.isTypeOf(Target!Class))) {
+    		attr.type = getClassByName(newModel, attr.type.name);
+    	}
+    	
+    	for(oo in cls.ownedOperation) {
+    		for(op in oo.ownedParameter.select(o|o.type.isTypeOf(Target!Class))) {
+    			op.type = getClassByName(newModel, op.type.name);
+    		}
+    	}
+    	
+    	for(gen in cls.generalizations) {
+    		gen.general = getClassByName(newModel, gen.general.name);
+    	}
+    }
+    
+    for(pkg in newModel.packagedElement.select(p|p.isTypeOf(Target!Package))) {
+    	for(cls in pkg.packagedElement.select(p|p.isTypeOf(Target!Class))) {
+	    	for(attr in cls.ownedAttribute.select(attr|attr.type.isTypeOf(Target!Class))) {
+	    		attr.type = getClassByName(newModel, attr.type.name);
+	    	}
+	    	
+	    	for(oo in cls.ownedOperation) {
+	    		for(op in oo.ownedParameter.select(o|o.type.isTypeOf(Target!Class))) {
+	    			op.type = getClassByName(newModel, op.type.name);
+	    		}
+	    	}
+	    	
+	    	for(gen in cls.generalizations) {
+	    		gen.general = getClassByName(newModel, gen.general.name);
+	    	}
+	    }
+    }
+}
+
+operation Source!Model addAssociations(newModel: Target!Model) {
+	for(oldAssociation in self.packagedElement.select(cls|cls.isTypeOf(Source!Association))) {
+		var newAssociation = new Target!Association();
+		newAssociation.name = oldAssociation.name;
+	
+		for(oldProperty in oldAssociation.memberEnd) {
+			if(oldProperty.type != null) {
+				var classType = oldProperty.type.name;
+			
+				for(newClass in newModel.packagedElement.select(cls|cls.isTypeOf(Source!Class))) {
+					if(classType==newClass.name) {
+					}
+				}
+			}
+		}
+		
+		if(oldAssociation.ownedEnd != null) {
+			
+			for(end in oldAssociation.ownedEnd) {
+				var ownedEnd = new Target!Property();
+				ownedEnd.name = end.name;
+				ownedEnd.type = getClassByName(newModel, end.type.name);
+				newAssociation.ownedEnd.add(ownedEnd);
+			}
+		}
+		
+		newModel.packagedElement.add(newAssociation);
+    }
+}
+
+operation getClassByName(newModel: Target!Model, name: String): Target!Class {
+	for(cls in newModel.packagedElement.select(p|p.isTypeOf(Target!Class))) {
+		if(cls.name = name) {
+			return cls;
+		}
+	}
+	for(pkg in newModel.packagedElement.select(p|p.isTypeOf(Target!Package))) {
+		for(cls in pkg.packagedElement.select(p|p.isTypeOf(Target!Class))) {
+			if(cls.name = name) {
+				return cls;
+			}
+		}
+	}
+	return null;
+}

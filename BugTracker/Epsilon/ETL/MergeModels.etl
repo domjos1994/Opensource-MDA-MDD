@@ -1,0 +1,48 @@
+import "Helper.etl";
+
+rule AddBugTracker
+    transform oldModel : Source!Model
+    to 	newModel : Target!Model {
+    guard: oldModel.name.startsWith("BugTracker")
+    
+    oldModel.addClasses(newModel);
+    oldModel.addAssociations(newModel);
+    
+    var classes = new List<String>();
+    classes.add("IdObject");
+    classes.add("DescriptionTitleObject");
+    classes.add("User");
+    newModel.packagedElement.add(createPackage("base", newModel, classes));
+    
+    classes.clear();
+    classes.add("Project");
+    classes.add("Version");
+    newModel.packagedElement.add(createPackage("project", newModel, classes));
+    
+    classes.clear();
+    classes.add("Issue");
+    classes.add("Tag");
+    classes.add("Category");
+    newModel.packagedElement.add(createPackage("issue", newModel, classes));
+}
+
+operation createPackage(name: String, newModel: Target!Model, classes: List<String>): Target!Package {
+	var pkg = new Target!Package();
+	pkg.name = name;
+	for(cls in classes) {
+		var cl = getClassByName(newModel, cls);
+		if(cl != null) {
+			pkg.packagedElement.add(cl);
+		}
+	}
+	return pkg;
+}
+
+operation getClassByName(newModel: Target!Model, name: String): Target!Class {
+	for(cls in newModel.packagedElement.select(p|p.isTypeOf(Target!Class))) {
+		if(cls.name = name) {
+			return cls;
+		}
+	}
+	return null;
+}

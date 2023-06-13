@@ -1,0 +1,76 @@
+import "Helper.etl";
+
+rule AddProfileToClasses
+    transform oldModel : Source!Model
+    to newModel : Target!Model {
+    guard: oldModel.name.startsWith("BugTracker")
+    
+    oldModel.addClasses(newModel);
+    oldModel.addAssociations(newModel);
+    
+    
+   	var umlTool : new Native("org.eclipse.epsilon.emc.uml.dt.UMLTool");
+	var bugTrackerProfile = umlTool.getProfileFromPathmapURI​("/BugTracker/BugTracker.profile.uml");
+	var hibernateEntry = bugTrackerProfile.getPackagedElement("HibernateEntry");
+	
+	newModel.applyProfile(bugTrackerProfile);
+	newModel.applyProfile(hibernateEntry);
+	
+	// register profile
+	for(profileApp in newModel.profileApplications) {
+		Target.resource.resourceSet.packageRegistry.put(profileApp.appliedDefinition.nsURI, profileApp.appliedDefinition);
+	}
+	
+	for(elem in newModel.packagedElement.select(p|p.isTypeOf(Target!Package))) {
+		for(class in elem.packagedElement.select(p|p.isTypeOf(Target!Class))) {
+			for(gen in class.generalization) {
+				for(elem2 in newModel.packagedElement.select(p|p.isTypeOf(Target!Package))) {
+					for(class in elem2.packagedElement.select(p|p.name=gen.general.name)) {
+						var superClass = new Target!SuperClass();
+						superClass.base_Class = class;
+					}
+				}
+			}
+		}
+	}
+	
+	for(class in newModel.packagedElement.select(p|p.isTypeOf(Target!Class))) {
+		var stereo = class.getAppliedStereoTypes().select(st|st.name="SuperClass");
+		if(stereo.size==0) {
+			if(class.name != "BugTracker") {
+				var entry = new Target!Entry();
+				entry.base_Class = class;
+			}
+		}
+		
+		for(attribute in class.ownedAttribute.select(attr|attr.name=="id")) {
+			var id = new Target!ID();
+			id.base_Property = attribute;
+		}
+		
+		for(op in class.ownedOperation.select(op|op.name=="save")) {
+			var hib = new Target!ContainsHibernate();
+			hib.base_Operation = op;
+		}
+	}
+	
+	for(elem in newModel.packagedElement.select(p|p.isTypeOf(Target!Package))) {
+		for(class in elem.packagedElement.select(p|p.isTypeOf(Target!Class))) {
+			var stereo = class.getAppliedStereoTypes().select(st|st.name="SuperClass");
+			if(stereo.size==0) {
+				var entry = new Target!Entry();
+				entry.base_Class = class;
+			}
+			
+			for(attribute in class.ownedAttribute.select(attr|attr.name=="id")) {
+				var id = new Target!ID();
+				id.base_Property = attribute;
+			}
+			
+			for(op in class.ownedOperation.select(op|op.name=="save")) {
+				var hib = new Target!ContainsHibernate();
+				hib.base_Operation = op;
+			}
+		}
+	}
+}

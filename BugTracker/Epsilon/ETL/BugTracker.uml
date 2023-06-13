@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HibernateEntry="http://BugTracker/schemas/HibernateEntry/_1bVZUN6nEe2oKYyPGTS20w/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://BugTracker/schemas/HibernateEntry/_1bVZUN6nEe2oKYyPGTS20w/5 BugTracker.profile.uml#_1bXOgN6nEe2oKYyPGTS20w">
+  <uml:Model xmi:id="_tdCFEMf1Ee2rKOZ8A5U7rQ" name="BugTracker">
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_3wKs4NIpEe2iSqVHwBYe_g" name="IssueExists">
+      <region xmi:type="uml:Region" xmi:id="_41fWMNIpEe2iSqVHwBYe_g" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_RAtSENLwEe2rnpl39A1D4A" source="_BlYMkNIsEe2iSqVHwBYe_g" target="_0sHF8NLtEe2rnpl39A1D4A">
+          <trigger xmi:type="uml:Trigger" xmi:id="_E1_MMNLxEe2rnpl39A1D4A"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_GOcNUN6sEe2oKYyPGTS20w" name="Is Null" source="_0sHF8NLtEe2rnpl39A1D4A" target="_EJG4gN6sEe2oKYyPGTS20w">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_MercUN6sEe2oKYyPGTS20w">
+            <language>JAVA</language>
+            <body>(issue.getID()==null)</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_T6tJAN6sEe2oKYyPGTS20w" guard="_XsO54N6sEe2oKYyPGTS20w" source="_EJG4gN6sEe2oKYyPGTS20w" target="_Q98c8N6sEe2oKYyPGTS20w">
+          <ownedRule xmi:type="uml:Constraint" xmi:id="_XsO54N6sEe2oKYyPGTS20w" name="true">
+            <specification xmi:type="uml:LiteralBoolean" xmi:id="_XsO54d6sEe2oKYyPGTS20w" value="true"/>
+          </ownedRule>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_kJazUN6sEe2oKYyPGTS20w" guard="_pqP-oN6sEe2oKYyPGTS20w" source="_EJG4gN6sEe2oKYyPGTS20w" target="_gahfsN6sEe2oKYyPGTS20w">
+          <ownedRule xmi:type="uml:Constraint" xmi:id="_pqP-oN6sEe2oKYyPGTS20w" name="false">
+            <specification xmi:type="uml:LiteralBoolean" xmi:id="_pqP-od6sEe2oKYyPGTS20w"/>
+          </ownedRule>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_xnQ4gN6sEe2oKYyPGTS20w" name="ID not 0" source="_gahfsN6sEe2oKYyPGTS20w" target="_LDh3gN6tEe2oKYyPGTS20w">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="__6twAN6sEe2oKYyPGTS20w">
+            <language>JAVA</language>
+            <body>return issue.getID()!=0;</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_ylieoN6sEe2oKYyPGTS20w" name="return false" source="_Q98c8N6sEe2oKYyPGTS20w" target="_LDh3gN6tEe2oKYyPGTS20w">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_4r5Y4N6sEe2oKYyPGTS20w">
+            <language>JAVA</language>
+            <body>return false;</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_QKUyMN6tEe2oKYyPGTS20w" source="_LDh3gN6tEe2oKYyPGTS20w" target="_wJCnAN6sEe2oKYyPGTS20w">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_lAKYoN6tEe2oKYyPGTS20w">
+            <language>JAVA</language>
+            <body>return false;</body>
+          </effect>
+        </transition>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_BlYMkNIsEe2iSqVHwBYe_g"/>
+        <subvertex xmi:type="uml:State" xmi:id="_0sHF8NLtEe2rnpl39A1D4A" name="S2"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_EJG4gN6sEe2oKYyPGTS20w" name="" kind="choice"/>
+        <subvertex xmi:type="uml:State" xmi:id="_Q98c8N6sEe2oKYyPGTS20w" name="Null"/>
+        <subvertex xmi:type="uml:State" xmi:id="_gahfsN6sEe2oKYyPGTS20w" name="Is Not Null"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_wJCnAN6sEe2oKYyPGTS20w" name="FinalState10"/>
+        <subvertex xmi:type="uml:State" xmi:id="_LDh3gN6tEe2oKYyPGTS20w" name="Return"/>
+      </region>
+    </packagedElement>
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_jKlIkNkyEe2F49EgGcOaxg" name="SaveIssue">
+      <region xmi:type="uml:Region" xmi:id="_kyI8QNkyEe2F49EgGcOaxg" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_-iq7ENkyEe2F49EgGcOaxg" source="_y_UzsNkyEe2F49EgGcOaxg" target="_zjpowNkyEe2F49EgGcOaxg">
+          <trigger xmi:type="uml:Trigger" xmi:id="_EJ_I4NkzEe2F49EgGcOaxg"/>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_PSbc8NkzEe2F49EgGcOaxg" name="Set Project" kind="local" source="_zjpowNkyEe2F49EgGcOaxg" target="_IJtt0NkzEe2F49EgGcOaxg">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_rKiE4Nk2Ee2F49EgGcOaxg">
+            <language>JAVA</language>
+            <body>version.project = project;&#xD;
+this.setProject(project);</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_loAX0NkzEe2F49EgGcOaxg" name="Set Version" source="_IJtt0NkzEe2F49EgGcOaxg" target="_eO1x4NkzEe2F49EgGcOaxg">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_sLTswNkzEe2F49EgGcOaxg">
+            <language>JAVA</language>
+            <body>this.setVersion(version);&#xD;
+issue.version = version;</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_3_BycNkzEe2F49EgGcOaxg" name="Set Developer" source="_eO1x4NkzEe2F49EgGcOaxg" target="_RD11YN4DEe2b-cW_QU3v2g">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_UGRCkNk3Ee2F49EgGcOaxg">
+            <language>JAVA</language>
+            <body>this.setDeveloper(developer);&#xD;
+issue.user = developer;&#xD;
+setIssue(issue);</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_qWpWYN4DEe2b-cW_QU3v2g" name="Issue Exists" source="_RD11YN4DEe2b-cW_QU3v2g" target="_ntEFAN4DEe2b-cW_QU3v2g">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_7EzVwN4DEe2b-cW_QU3v2g">
+            <language>JAVA</language>
+            <body>issueExists(issue)</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_DIHr8N4EEe2b-cW_QU3v2g" guard="_a_YcAN4EEe2b-cW_QU3v2g" source="_ntEFAN4DEe2b-cW_QU3v2g" target="_-0laMN4DEe2b-cW_QU3v2g">
+          <ownedRule xmi:type="uml:Constraint" xmi:id="_a_YcAN4EEe2b-cW_QU3v2g" name="true">
+            <specification xmi:type="uml:LiteralBoolean" xmi:id="_mJ-FIN4EEe2b-cW_QU3v2g" value="true"/>
+          </ownedRule>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_uUSbMN4EEe2b-cW_QU3v2g" guard="_zQsq0N4EEe2b-cW_QU3v2g" source="_ntEFAN4DEe2b-cW_QU3v2g" target="_oA_4MN4EEe2b-cW_QU3v2g">
+          <ownedRule xmi:type="uml:Constraint" xmi:id="_zQsq0N4EEe2b-cW_QU3v2g" name="false">
+            <specification xmi:type="uml:LiteralBoolean" xmi:id="_zQsq0d4EEe2b-cW_QU3v2g"/>
+          </ownedRule>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_9-GBoN4EEe2b-cW_QU3v2g" name="Update State" source="_-0laMN4DEe2b-cW_QU3v2g" target="_dBZcAN6REe2EXLqnSPhfhA">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_TVKF0N4FEe2b-cW_QU3v2g">
+            <language>JAVA</language>
+            <body>setState(State.updatedIssue)</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="__Ga7oN4EEe2b-cW_QU3v2g" name="New State" source="_oA_4MN4EEe2b-cW_QU3v2g" target="_dBZcAN6REe2EXLqnSPhfhA">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_IdWOwN4FEe2b-cW_QU3v2g">
+            <language>JAVA</language>
+            <body>setState(State.newIssue)</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_ngMWIN6REe2EXLqnSPhfhA" name="Save Issue" source="_dBZcAN6REe2EXLqnSPhfhA" target="_0jeRkNkzEe2F49EgGcOaxg">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_ujEjAN6REe2EXLqnSPhfhA">
+            <language>JAVA</language>
+            <body>save()</body>
+          </effect>
+        </transition>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_y_UzsNkyEe2F49EgGcOaxg" name="Input"/>
+        <subvertex xmi:type="uml:State" xmi:id="_zjpowNkyEe2F49EgGcOaxg" name="NoProject"/>
+        <subvertex xmi:type="uml:State" xmi:id="_IJtt0NkzEe2F49EgGcOaxg" name="NoVersion"/>
+        <subvertex xmi:type="uml:State" xmi:id="_eO1x4NkzEe2F49EgGcOaxg" name="NoDeveloper"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_0jeRkNkzEe2F49EgGcOaxg" name="Return"/>
+        <subvertex xmi:type="uml:State" xmi:id="_RD11YN4DEe2b-cW_QU3v2g" name="NoState"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_ntEFAN4DEe2b-cW_QU3v2g" name="" kind="choice"/>
+        <subvertex xmi:type="uml:State" xmi:id="_-0laMN4DEe2b-cW_QU3v2g" name="Update-State"/>
+        <subvertex xmi:type="uml:State" xmi:id="_oA_4MN4EEe2b-cW_QU3v2g" name="Insert-State"/>
+        <subvertex xmi:type="uml:State" xmi:id="_dBZcAN6REe2EXLqnSPhfhA" name="NotSaved"/>
+      </region>
+    </packagedElement>
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_GD4nUN6lEe2oKYyPGTS20w" name="Save">
+      <region xmi:type="uml:Region" xmi:id="_G9d6sN6lEe2oKYyPGTS20w" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_VUtGAN6lEe2oKYyPGTS20w" name="Init Hibernate" source="_QTU20N6lEe2oKYyPGTS20w" target="_Roi9UN6lEe2oKYyPGTS20w">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_iGWzkN6lEe2oKYyPGTS20w">
+            <language>JAVA</language>
+            <body>SessionFactory sessionFactory = new Configuration().&#xD;
+	configure().buildSessionFactory();&#xD;
+Session session = sessionFactory.getCurrentSession();&#xD;
+Transaction transaction = session.beginTransaction();</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_pHNAIN6lEe2oKYyPGTS20w" name="Persist Data" source="_Roi9UN6lEe2oKYyPGTS20w" target="_r1kKMN6tEe2oKYyPGTS20w">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_w99hAN6lEe2oKYyPGTS20w">
+            <language>JAVA</language>
+            <body>session.persist(user);&#xD;
+session.persist(project);&#xD;
+session.persist(version);&#xD;
+session.persist(issue);</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_49eboN6tEe2oKYyPGTS20w" name="Commit" source="_r1kKMN6tEe2oKYyPGTS20w" target="_mQtUIN6lEe2oKYyPGTS20w">
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_9eSUYN6tEe2oKYyPGTS20w">
+            <language>JAVA</language>
+            <body>transaction.commit();</body>
+          </effect>
+        </transition>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_QTU20N6lEe2oKYyPGTS20w" name="Start"/>
+        <subvertex xmi:type="uml:State" xmi:id="_Roi9UN6lEe2oKYyPGTS20w" name="Init"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_mQtUIN6lEe2oKYyPGTS20w" name="Return"/>
+        <subvertex xmi:type="uml:State" xmi:id="_r1kKMN6tEe2oKYyPGTS20w" name="Persisted"/>
+      </region>
+    </packagedElement>
+    <packagedElement xmi:type="uml:StateMachine" xmi:id="_y8ZdIOd4Ee2_6p7oItEbAQ" name="SMCBugTracker">
+      <region xmi:type="uml:Region" xmi:id="_0sXl8Od4Ee2_6p7oItEbAQ" name="Region1">
+        <transition xmi:type="uml:Transition" xmi:id="_YFR0QOd5Ee2_6p7oItEbAQ" name="onFinish" guard="_JNjH8OheEe2EvY0GwSK5kg" source="_7sy7wOd4Ee2_6p7oItEbAQ" target="_TyeiUOd5Ee2_6p7oItEbAQ">
+          <ownedRule xmi:type="uml:Constraint" xmi:id="_JNjH8OheEe2EvY0GwSK5kg" name="state">
+            <specification xmi:type="uml:LiteralBoolean" xmi:id="_QY8XoOheEe2EvY0GwSK5kg" name="state"/>
+          </ownedRule>
+          <effect xmi:type="uml:OpaqueBehavior" xmi:id="_XQD9QOhaEe2EvY0GwSK5kg">
+            <language>JAVA</language>
+            <body>test();</body>
+          </effect>
+        </transition>
+        <transition xmi:type="uml:Transition" xmi:id="_pJ7BAOd5Ee2_6p7oItEbAQ" name="onError" source="_7sy7wOd4Ee2_6p7oItEbAQ" target="_7sy7wOd4Ee2_6p7oItEbAQ"/>
+        <transition xmi:type="uml:Transition" xmi:id="_kla8MOhXEe2EvY0GwSK5kg" source="_jZbDIOhXEe2EvY0GwSK5kg" target="_7sy7wOd4Ee2_6p7oItEbAQ"/>
+        <subvertex xmi:type="uml:State" xmi:id="_7sy7wOd4Ee2_6p7oItEbAQ" name="State1">
+          <doActivity xmi:type="uml:OpaqueBehavior" xmi:id="_QuEWIOd5Ee2_6p7oItEbAQ" name="updateProgress()">
+            <language>JAVA</language>
+            <body>updateProgress()</body>
+          </doActivity>
+          <entry xmi:type="uml:OpaqueBehavior" xmi:id="_FS_Z8Od5Ee2_6p7oItEbAQ" name="startTimer()">
+            <language>JAVA</language>
+            <body>startTimer()</body>
+          </entry>
+          <exit xmi:type="uml:OpaqueBehavior" xmi:id="_MS8OoOd5Ee2_6p7oItEbAQ" name="endTimer()">
+            <language>JAVA</language>
+            <body>endTimer()</body>
+          </exit>
+        </subvertex>
+        <subvertex xmi:type="uml:State" xmi:id="_TyeiUOd5Ee2_6p7oItEbAQ" name="State2"/>
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_jZbDIOhXEe2EvY0GwSK5kg" name="Initial5"/>
+      </region>
+    </packagedElement>
+  </uml:Model>
+</xmi:XMI>

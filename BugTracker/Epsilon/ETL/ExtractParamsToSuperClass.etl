@@ -1,0 +1,127 @@
+import "Helper.etl";
+
+rule ExtractParamsToSuperClass
+    transform oldModel : Source!Model 
+    to newModel : Target!Model {
+    guard: oldModel.name.startsWith("BugTracker")
+    
+    oldModel.addClasses(newModel);
+    oldModel.addAssociations(newModel);
+    
+    var columns = newModel.LoadSuperClasses();
+    
+    var columns2 = ToSequence(columns);
+
+   	newModel.createClasses(columns2);
+}
+
+operation sameList(ls1: List<String>, ls2: List<String>): Boolean {
+	for(item in ls1) {
+		if(not ls2.contains(item)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+operation ToSequence(columns: Map<String, List<String>>): Set<Set<String>> {
+	var sequence = new Set<List<String>>();
+	
+	for(key in columns.keySet) {
+		if(columns.get(key).size>2) {
+			var cols = new Set<String>();
+			cols.add(key);
+			for(key2 in columns.keySet) {
+				if(key!=key2) {
+					if(columns.get(key)==columns.get(key2)) {
+						cols.add(key2);
+					}
+				}
+			}
+			
+			sequence.add(cols);	
+		}
+	}
+	return sequence;
+}
+
+
+// find attributes which are used multiple and their classes
+operation Target!Model LoadSuperClasses(): Map<String, List<String>> {
+	var mp = new Map<String,List<Target!Class>>();
+	
+	for(cls in self.packagedElement.select(cls|cls.isTypeOf(Target!Class))) {
+		for(prop in cls.ownedAttribute) {
+			for(cls2 in self.packagedElement.select(p|p.isTypeOf(Target!Class) and p.name.toLowerCase()!=cls.name.toLowerCase())) {
+				for(current in cls2.ownedAttribute.select(cur|cur.name.toLowerCase()==prop.name.toLowerCase() and cls2.name.toLowerCase()!=prop.name.toLowerCase())) {
+					if(mp.containsKey(current.name)) {
+						if(not mp.get(current.name).contains(cls2.name)) {
+							mp.get(current.name).add(cls2.name);
+						}
+					} else {
+						var classes = new List<String>();
+						classes.add(cls2.name);
+						mp.put(current.name, classes);
+					}
+				}
+			}
+		}
+	}
+	
+	return mp;
+}
+
+operation Target!Model createClasses(newClasses: Set<Set<String>>): List<Target!Class> {
+	var base = null;
+	for(set in newClasses) {
+		var name = "";
+		
+		for(col in set) {
+			name += col.substring(0, 1).toUpperCase() + col.substring(1);
+		}
+		name += "Object";
+		
+		var class = new Target!Class();
+		class.name = name;
+		if(base!=null) {
+			var generalization = new Target!Generalization();
+			generalization.general = base;
+			class.generalization.add(generalization);
+		}
+		base = class;
+		
+		
+		for(item in set) {
+			var property = new Target!Property();
+			property.name = item;
+			for(cls in self.packagedElement.select(p|p.isTypeOf(Target!Class))) {
+				for(prop in cls.ownedAttribute) {
+					if(item==prop.name) {
+						property.type = prop.type;
+				
+						var contains = false;
+						for(gen in cls.generalization) {
+							if(gen.general.name = class.name) {
+								contains = true;
+								break;
+							}
+						}
+						
+						if(not contains) {
+							cls.generalization.clear();
+							var generalization = new Target!Generalization();
+							generalization.general = class;
+							cls.generalization.add(generalization);
+						}
+						
+						cls.ownedAttribute.remove(prop);
+						break;
+					}
+				}
+			}
+			class.ownedAttribute.add(property);
+		}
+		
+		self.packagedElement.add(class);
+	}
+}

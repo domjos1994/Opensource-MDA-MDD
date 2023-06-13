@@ -13,7 +13,7 @@ operation Class addImports() {
 	
 	if(self.generalization != null) {
 		for(gen in self.generalization) {
-			genImports = genImports + "import " + gen.general.qualifiedName.replace("::", ".") + ";\n";
+			genImports = genImports + "import " + gen.general.qualifiedName.replace("::", ".") + ";\r\n";
 		}
 	}
 	
@@ -21,7 +21,9 @@ operation Class addImports() {
 		if(ownedAttribute.isTypeOf(Property)) {
 			if(ownedAttribute.type.isTypeOf(Class)) {
 				var qualified = ownedAttribute.type.qualifiedName;
-				classImports = classImports + "import " + qualified.replace("::", ".") + ";\n";
+				if(qualified!=null) {
+					classImports = classImports + "import " + qualified.replace("::", ".") + ";\r\n";
+				}
 			}
 			if(ownedAttribute.upper!=1) {
 				isList = 1;
@@ -34,7 +36,9 @@ operation Class addImports() {
 		for(ownedParameter in ownedOperation.ownedParameter) {
 			if(ownedParameter.type.isTypeOf(Class)) {
 				var qualified = ownedParameter.type.qualifiedName;
-				classImports = classImports + "import " + qualified.replace("::", ".") + ";\n";
+				if(qualified!=null) {
+					classImports = classImports + "import " + qualified.replace("::", ".") + ";\r\n";
+				}
 			}
 			if(ownedParameter.upper!=1) {
 				isList = 1;
@@ -42,19 +46,19 @@ operation Class addImports() {
 		}
 		if(ownedOperation.getAppliedStereotypes().select(c|c.name="ContainsHibernate").size == 1) {
 			if(hibOperation == "") {
-				hibOperation = "import org.hibernate.*;\nimport org.hibernate.cfg.*;";
+				hibOperation = "import org.hibernate.*;\r\nimport org.hibernate.cfg.*;";
 			}
 		}
 	}
 	
 	var lsImports = "";
 	if(isList==1) {
-		lsImports = "import java.util.List;\nimport java.util.LinkedList;\n";
+		lsImports = "import java.util.List;\r\nimport java.util.LinkedList;\r\n";
 	}
 	
 	var hibImports = "";
 	if(self.getAppliedStereotypes().select(c|c.name="Entry" or c.name="SuperClass").size==1) {
-		hibImports = "import java.io.Serializable;\nimport jakarta.persistence.*;\n";
+		hibImports = "import java.io.Serializable;\r\nimport jakarta.persistence.*;\r\n";
 	}
 	
 	var imports = genImports + classImports + lsImports + hibImports + hibOperation;
@@ -75,13 +79,17 @@ operation Property buildProperty() {
 	var visibility = self.visibility;
 	var name = self.name;
 	var static = (self.isStatic() ? " static " : " ");
-	var type = self.type.name.replace("EDate", "java.util.Date");
+	var data = self.type.name;
+	var type = "";
+	if(data != null) {
+		type = data.replace("EDate", "java.util.Date");
+	}
 	var lsBegin = (self.upper!=1?"List<":"");
 	var lsEnd = (self.upper!=1?"> ":" ");
 	var lsDefault = (self.upper!=1?" = new LinkedList<>()":"");
 	
 	%][%=self.addColumnAnnotation()%][%
-	var property = "\t" + visibility + static + lsBegin + type + lsEnd + name + lsDefault + ";\n\n";
+	var property = "\t" + visibility + static + lsBegin + type + lsEnd + name + lsDefault + ";\r\n\r\n";
 	%][%=property%][% 
 }
 
@@ -122,7 +130,7 @@ operation Operation buildSetter() {
 		}	
 	}
 	
-	var operationContent = "\t" + visibility + " void " + name + "(" + parameters + ") {\n\t\tthis." + item + "=" + item + ";\n\t}\n\n";
+	var operationContent = "\t" + visibility + " void " + name + "(" + parameters + ") {\r\n\t\tthis." + item + "=" + item + ";\r\n\t}\r\n\r\n";
 	%][%=operationContent%][%
 }
 
@@ -140,7 +148,7 @@ operation Operation buildGetter() {
 		}	
 	}
 	
-	var operationContent = "\t" + visibility + returnType + name + "() {\n\t\treturn this." + attr + ";\n\t}\n\n";
+	var operationContent = "\t" + visibility + returnType + name + "() {\r\n\t\treturn this." + attr + ";\r\n\t}\r\n\r\n";
 	%][%=operationContent%][%
 }
 
@@ -157,16 +165,22 @@ operation Operation buildMethod(isConstructor: Boolean) {
 		}
 		if(param.direction.name=="in") {
 			if(parameters=="") {
-				parameters = param.type.name.replace("EDate", "java.util.Date") + " " + param.name;
+				var type = param.type.name;
+				if(type!=null) {
+					parameters = type.replace("EDate", "java.util.Date") + " " + param.name;
+				}
 			} else {
-				parameters = parameters + ", " + param.type.name.replace("EDate", "java.util.Date") + " " + param.name;
+				var type = param.type.name;
+				if(type!=null) {
+					parameters = parameters + ", " + type.replace("EDate", "java.util.Date") + " " + param.name;
+				}
 			}
 		}	
 	}
 	var stateMachine = self.buildStateMachine();
 	var newData = "";
-	for(line in stateMachine.split("\n")) {
-		newData += "\t\t" + line + "\n";
+	for(line in stateMachine.split("\r\n")) {
+		newData += "\t\t" + line + "\r\n";
 	}
 	if(newData.trim() == "") {
 		if(self.precondition.size() != 0) {
@@ -179,9 +193,9 @@ operation Operation buildMethod(isConstructor: Boolean) {
 	
 	var header = "";
 	if(isConstructor) {
-		header = "\t" + visibility + " " + name + "(" + parameters + ") {\n" + newData + "\n\t}\n\n";
+		header = "\t" + visibility + " " + name + "(" + parameters + ") {\r\n" + newData + "\r\n\t}\r\n\r\n";
 	} else {
-		header = "\t" + visibility + returnType + name + "(" + parameters + ") {\n" + newData + "\n\t}\n\n";
+		header = "\t" + visibility + returnType + name + "(" + parameters + ") {\r\n" + newData + "\r\n\t}\r\n\r\n";
 	}
 
 	%][%=header%][%
@@ -207,7 +221,7 @@ operation Constraint buildRule(returnType: Boolean): String {
 	}
 	
 	if(body != "") {
-		var lines = body.replace("\n", "").trim().split("and");
+		var lines = body.replace("\r\n", "").trim().split("and");
 		
 		var onlyAssignments = true;
 		for(line in lines) {
@@ -226,21 +240,21 @@ operation Constraint buildRule(returnType: Boolean): String {
 					line = "this." + line;
 					
 					if(content == "") {
-						content = "\t\t" + line.replace("\n", "");
+						content = "\t\t" + line.replace("\r\n", "");
 					} else {
-						content += "\n\t\t" + line.replace("\n", "");
+						content += "\r\n\t\t" + line.replace("\r\n", "");
 					}
 				}
 			}
 		} else {
-			body = body.replace("<>", "!=").replace("and", "&&").replace("or", "||").replace("\n","").replace("\r","").trim();
+			body = body.replace("<>", "!=").replace("and", "&&").replace("or", "||").replace("\r\n","").replace("\r","").trim();
 			
 			var type = "";
 			if(returnType) {
 				type = " null";
 			}
 			
-			content = "\t\tif(" + body + "){\n\t\t\treturn" + type + ";\n\t\t}\n";
+			content = "\t\tif(" + body + "){\r\n\t\t\treturn" + type + ";\r\n\t\t}\r\n";
 		}
 	}
 	return content;
@@ -262,10 +276,10 @@ operation Enumeration buildEnumeration() {
 		if(items=="") {
 			items = "\t\t" + item.name;
 		} else {
-			items = items + ",\n\t\t" + item.name;
+			items = items + ",\r\n\t\t" + item.name;
 		}
 	}
-	content = content + "\n" + items + "\n\t}\n";
+	content = content + "\r\n" + items + "\r\n\t}\r\n";
 	%][%=content%][%
 }
 
@@ -290,7 +304,7 @@ operation Class printHeader() {
 @template
 operation Class addEntityAnnotation() {
 	if(cl.getAppliedStereotypes().select(c|c.name="Entry").size==1) {
-		var annotation = "@Entity\n@Table(name=\"" + self.name + "\")";
+		var annotation = "@Entity\r\n@Table(name=\"" + self.name + "\")";
 		%][%=annotation%][%	
 	} else if(cl.getAppliedStereotypes().select(c|c.name="SuperClass").size==1) {
 		%][%="@MappedSuperclass"%][%
@@ -303,18 +317,18 @@ operation Property addColumnAnnotation() {
 		var annotation = "";
 		if(self.type.isTypeOf(Class)) {
 			if(self.upper!=1) {
-				annotation = "\t@OneToMany(cascade=CascadeType.ALL)\n";
+				annotation = "\t@OneToMany(cascade=CascadeType.ALL)\r\n";
 			} else {
-				annotation = "\t@OneToOne(cascade=CascadeType.ALL)\n";
+				annotation = "\t@OneToOne(cascade=CascadeType.ALL)\r\n";
 			}
-			annotation = annotation + "\t@JoinColumn(name=\"" + self.name.replace("get", "") + "\", referencedColumnName=\"ID\")\n";
+			annotation = annotation + "\t@JoinColumn(name=\"" + self.name.replace("get", "") + "\", referencedColumnName=\"ID\")\r\n";
 		} else {
-			annotation = annotation + "\t@Column(name=\"" + self.name.replace("get", "") + "\")\n";
+			annotation = annotation + "\t@Column(name=\"" + self.name.replace("get", "") + "\")\r\n";
 		}
 		%][%=annotation%][%
 	}
 	if(self.getAppliedStereotypes().select(c|c.name="ID").size==1) {
-		var annotation = "\t@Id\n\t@GeneratedValue(strategy = GenerationType.AUTO)\n";
+		var annotation = "\t@Id\r\n\t@GeneratedValue(strategy = GenerationType.AUTO)\r\n";
 		%][%=annotation%][%
 	}
 }
