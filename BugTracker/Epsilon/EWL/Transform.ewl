@@ -1,0 +1,8 @@
+wizard SplitName {
+	guard: self.isTypeOf(Class)
+	title: "1. Create ID"
+	
+	do {
+		
+	}
+}

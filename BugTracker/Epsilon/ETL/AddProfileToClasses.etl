@@ -10,7 +10,8 @@ rule AddProfileToClasses
     
     
    	var umlTool : new Native("org.eclipse.epsilon.emc.uml.dt.UMLTool");
-	var bugTrackerProfile = umlTool.getProfileFromPathmapURI​("/BugTracker/BugTracker.profile.uml");
+   	var bugTrackerProfile = umlTool.getProfileFromPathmapURI("/BugTracker/BugTracker.profile.uml");
+   	//var bugTrackerProfile = umlTool.getProfileFromPathmapURI("/BugTracker/BugTracker.profile.uml");​
 	var hibernateEntry = bugTrackerProfile.getPackagedElement("HibernateEntry");
 	
 	newModel.applyProfile(bugTrackerProfile);
